@@ -6,6 +6,13 @@ namespace NewSoufanWeatherStation.iOS
 {
     public partial class ViewController : UIViewController
     {
+        partial void ClickButton(UIButton sender)
+        {
+            
+            LabelSam.Text = "Sacw";
+           // Console.Write("cawededfaasf");
+        }
+
         int count = 1;
 
         public ViewController(IntPtr handle) : base(handle)
