@@ -24,7 +24,6 @@ namespace SoufanWeatherStation.iOS
                 btnAddItem.Dispose ();
                 btnAddItem = null;
             }
-		}
-
+        }
     }
 }

@@ -6,14 +6,7 @@ namespace NewSoufanWeatherStation.iOS
 {
     public partial class ViewController : UIViewController
     {
-        partial void ClickButton(UIButton sender)
-        {
-            
-            LabelSam.Text = "Sacw";
-           // Console.Write("cawededfaasf");
-        }
-
-        int count = 1;
+        private int count = 1;
 
         public ViewController(IntPtr handle) : base(handle)
         {
@@ -22,7 +15,6 @@ namespace NewSoufanWeatherStation.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
             // Perform any additional setup after loading the view, typically from a nib.
             Button.AccessibilityIdentifier = "myButton";
             Button.TouchUpInside += delegate
@@ -37,5 +29,11 @@ namespace NewSoufanWeatherStation.iOS
             base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.		
         }
+
+		partial void ClickButton(UIButton sender)
+		{
+
+			LabelSam.Text = "Sacw";
+		}
     }
 }

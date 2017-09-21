@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="SoufanWeatherStation.LoginPage">
+    <Button HorizontalOptions= "Center" VerticalOptions="Center" Text="Click Me" Clicked="Handle_Clicked"></Button>
+    <Entry x:Name="usernameBox"  WidthRequest="23" HeightRequest="23" Margin="100,100,100,100" BackgroundColor="Aqua"></Entry>
+</ContentPage>
