@@ -19,26 +19,31 @@ namespace NewSoufanWeatherStation.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel LabelSam { get; set; }
+        UIKit.UITextField LoginTextField { get; set; }
 
-        [Action ("Button_TouchUpInside:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void Button_TouchUpInside (UIKit.UIButton sender);
+        UIKit.UITextField PasswordTextField { get; set; }
 
-        [Action ("ClickButton:")]
+        [Action ("ClickLoginButton:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void ClickButton (UIKit.UIButton sender);
+        partial void ClickLoginButton (UIKit.UIButton sender);
+
+        [Action ("ClickSignUpButton:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void ClickSignUpButton (UIKit.UIButton sender);
+
 
         void ReleaseDesignerOutlets ()
         {
-            if (Button != null) {
-                Button.Dispose ();
-                Button = null;
+            if (LoginTextField != null) {
+                LoginTextField.Dispose ();
+                LoginTextField = null;
             }
 
-            if (LabelSam != null) {
-                LabelSam.Dispose ();
-                LabelSam = null;
+            if (PasswordTextField != null) {
+                PasswordTextField.Dispose ();
+                PasswordTextField = null;
             }
         }
     }
