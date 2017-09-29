@@ -38,7 +38,7 @@ namespace NewSoufanWeatherStation.iOS
         partial void ClickLoginButton(UIButton sender)
         {
             count++;
-            new UIAlertView("My Title Text", "This is my main text "+ count, null, "Ok", null).Show();
+            //new UIAlertView("My Title Text", "This is my main text "+ count, null, "Ok", null).Show();
 
         }
     }
