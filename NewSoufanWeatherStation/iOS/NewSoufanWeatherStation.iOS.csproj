@@ -82,6 +82,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="TimesSquare.iOS">
+      <HintPath>..\Components\timessquare-1.0.5\lib\ios-unified\TimesSquare.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewSoufanWeatherStation\NewSoufanWeatherStation.csproj">
@@ -120,6 +123,16 @@
     <Compile Include="ViewControllers\UserViewController.designer.cs">
       <DependentUpon>UserViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControllers\CalendarViewController.cs" />
+    <Compile Include="ViewControllers\CalendarViewController.designer.cs">
+      <DependentUpon>CalendarViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="timessquare">
+      <Version>1.0.5</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
