@@ -22,6 +22,10 @@ namespace NewSoufanWeatherStation.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton submitButton { get; set; }
 
+        [Action ("CalendarButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void CalendarButton_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (calendarButton != null) {

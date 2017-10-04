@@ -28,16 +28,9 @@ namespace NewSoufanWeatherStation.iOS
                 var netDate = (DateTime)e.Date;
             };
 
-			submitButton.TouchUpInside += delegate
-			{
-				PopupWindow popup = new PopupWindow(view);
-				RunOnUiThread(() =>
-				{
-					popup.ShowAsDropDown(button, 10, 100, GravityFlags.Center);
-				});
-			};
+		
 
-            View.Add(calendarView);
+            // View.Add(calendarView);
 		}
 
 		public override void DidReceiveMemoryWarning()
@@ -45,5 +38,10 @@ namespace NewSoufanWeatherStation.iOS
 			base.DidReceiveMemoryWarning();
 			// Release any cached data, images, etc that aren't in use.     
 		}
+
+        partial void CalendarButton_TouchUpInside(UIButton sender)
+        {
+
+        }
     }
 }
