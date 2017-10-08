@@ -127,12 +127,23 @@
     <Compile Include="ViewControllers\CalendarViewController.designer.cs">
       <DependentUpon>CalendarViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControllers\WeatherStationViewController.cs" />
+    <Compile Include="ViewControllers\WeatherStationViewController.designer.cs">
+      <DependentUpon>WeatherStationViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\EditViewController.cs" />
+    <Compile Include="ViewControllers\EditViewController.designer.cs">
+      <DependentUpon>EditViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="timessquare">
       <Version>1.0.5</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather-wallpaper.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

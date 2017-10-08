@@ -8,7 +8,7 @@ namespace NewSoufanWeatherStation.iOS
     public partial class CalendarViewController : UIViewController
     {
         public CalendarViewController (IntPtr handle) : base (handle)
-        {
+        {   
         }
 
 		public override void ViewDidLoad()
@@ -21,11 +21,6 @@ namespace NewSoufanWeatherStation.iOS
 				FirstDate = Foundation.NSDate.Now,
 				BackgroundColor = UIColor.LightTextColor,
 				PagingEnabled = true
-			};
-
-			calendarView.DidSelectDate += (sender, e) =>
-			{
-				var netDate = (DateTime)e.Date;
 			};
 
             calendarView.DidSelectDate += (sender, e) => 
