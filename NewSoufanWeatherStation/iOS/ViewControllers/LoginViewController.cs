@@ -9,7 +9,6 @@ namespace NewSoufanWeatherStation.iOS
         public LoginViewController (IntPtr handle) : base (handle)
         {
         }
-		private int count = 1;
 
         public override void ViewDidLoad()
 		{
@@ -39,9 +38,9 @@ namespace NewSoufanWeatherStation.iOS
 
         partial void ClickLoginButton(UIButton sender)
         {
-            count++;
-            //new UIAlertView("My Title Text", "This is my main text "+ count, null, "Ok", null).Show();
+            UserViewController userView = this.Storyboard.InstantiateViewController("UserViewController") as UserViewController;
 
+            this.NavigationController.PushViewController(userView, true);
         }
     }
 }
