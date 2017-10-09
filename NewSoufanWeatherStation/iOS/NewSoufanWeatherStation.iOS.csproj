@@ -123,10 +123,6 @@
     <Compile Include="ViewControllers\UserViewController.designer.cs">
       <DependentUpon>UserViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\CalendarViewController.cs" />
-    <Compile Include="ViewControllers\CalendarViewController.designer.cs">
-      <DependentUpon>CalendarViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\WeatherStationViewController.cs" />
     <Compile Include="ViewControllers\WeatherStationViewController.designer.cs">
       <DependentUpon>WeatherStationViewController.cs</DependentUpon>

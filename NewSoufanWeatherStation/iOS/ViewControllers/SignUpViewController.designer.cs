@@ -14,10 +14,6 @@ namespace NewSoufanWeatherStation.iOS
     [Register ("SignUpViewController")]
     partial class SignUpViewController
     {
-        [Action ("CalendarButton_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void CalendarButton_TouchUpInside (UIKit.UIButton sender);
-
         void ReleaseDesignerOutlets ()
         {
         }
