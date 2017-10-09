@@ -14,29 +14,12 @@ namespace NewSoufanWeatherStation.iOS
     [Register ("SignUpViewController")]
     partial class SignUpViewController
     {
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton calendarButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton submitButton { get; set; }
-
         [Action ("CalendarButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void CalendarButton_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
-            if (calendarButton != null) {
-                calendarButton.Dispose ();
-                calendarButton = null;
-            }
-
-            if (submitButton != null) {
-                submitButton.Dispose ();
-                submitButton = null;
-            }
         }
     }
 }

@@ -33,7 +33,7 @@ namespace NewSoufanWeatherStation.iOS
 
 		partial void ClickSignUpButton(UIButton sender)
 		{
-
+            
 			//LabelSam.Text = "Sacw";
 		}
 
