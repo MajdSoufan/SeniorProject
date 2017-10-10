@@ -6,35 +6,27 @@ namespace NewSoufanWeatherStation.iOS
 {
     public partial class LoginViewController : UIViewController
     {
-        public LoginViewController (IntPtr handle) : base (handle)
+        public LoginViewController(IntPtr handle) : base(handle)
         {
         }
 
         public override void ViewDidLoad()
-		{
-			base.ViewDidLoad();
+        {
+            base.ViewDidLoad();
+            // Perform any additional setup after loading the view, typically from a nib.
 
+        }
 
-			// Perform any additional setup after loading the view, typically from a nib.
-			//Button.AccessibilityIdentifier = "myButton";
-			//Button.TouchUpInside += delegate
-			//{
-			//	var title = string.Format("{0} clicks!", count++);
-			//	Button.SetTitle(title, UIControlState.Normal);
-			//};
-		}
+        public override void DidReceiveMemoryWarning()
+        {
+            base.DidReceiveMemoryWarning();
+            // Release any cached data, images, etc that aren't in use.     
+        }
 
-		public override void DidReceiveMemoryWarning()
-		{
-			base.DidReceiveMemoryWarning();
-			// Release any cached data, images, etc that aren't in use.     
-		}
+        partial void ClickSignUpButton(UIButton sender)
+        {
 
-		partial void ClickSignUpButton(UIButton sender)
-		{
-            
-			//LabelSam.Text = "Sacw";
-		}
+        }
 
         partial void ClickLoginButton(UIButton sender)
         {
