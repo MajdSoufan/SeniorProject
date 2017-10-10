@@ -16,13 +16,30 @@ namespace NewSoufanWeatherStation.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITableView StationsTableView { get; set; }
+        UIKit.UIButton CancelButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton EditButton { get; set; }
+
+        [Action ("CancelButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void CancelButton_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("EditButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void EditButton_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
-            if (StationsTableView != null) {
-                StationsTableView.Dispose ();
-                StationsTableView = null;
+            if (CancelButton != null) {
+                CancelButton.Dispose ();
+                CancelButton = null;
+            }
+
+            if (EditButton != null) {
+                EditButton.Dispose ();
+                EditButton = null;
             }
         }
     }
