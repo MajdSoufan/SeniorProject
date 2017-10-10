@@ -14,8 +14,16 @@ namespace NewSoufanWeatherStation.iOS
     [Register ("UserViewController")]
     partial class UserViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITableView StationsTableView { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (StationsTableView != null) {
+                StationsTableView.Dispose ();
+                StationsTableView = null;
+            }
         }
     }
 }

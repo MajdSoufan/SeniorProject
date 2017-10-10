@@ -30,9 +30,9 @@ namespace NewSoufanWeatherStation.iOS
 
         partial void ClickLoginButton(UIButton sender)
         {
-            UserViewController userView = this.Storyboard.InstantiateViewController("UserViewController") as UserViewController;
-
-            this.NavigationController.PushViewController(userView, true);
+            // How to create a segue with out storyboard
+            //UserViewController userView = this.Storyboard.InstantiateViewController("UserViewController") as UserViewController;
+            //this.NavigationController.PushViewController(userView, true);
         }
     }
 }
