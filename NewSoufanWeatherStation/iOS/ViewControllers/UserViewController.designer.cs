@@ -22,6 +22,22 @@ namespace NewSoufanWeatherStation.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton EditButton { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField EmailTextField { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField FirstNameTextField { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField LastNameTextField { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField PasswordTextField { get; set; }
+
         [Action ("CancelButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void CancelButton_TouchUpInside (UIKit.UIButton sender);
@@ -40,6 +56,26 @@ namespace NewSoufanWeatherStation.iOS
             if (EditButton != null) {
                 EditButton.Dispose ();
                 EditButton = null;
+            }
+
+            if (EmailTextField != null) {
+                EmailTextField.Dispose ();
+                EmailTextField = null;
+            }
+
+            if (FirstNameTextField != null) {
+                FirstNameTextField.Dispose ();
+                FirstNameTextField = null;
+            }
+
+            if (LastNameTextField != null) {
+                LastNameTextField.Dispose ();
+                LastNameTextField = null;
+            }
+
+            if (PasswordTextField != null) {
+                PasswordTextField.Dispose ();
+                PasswordTextField = null;
             }
         }
     }

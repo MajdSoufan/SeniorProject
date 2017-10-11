@@ -14,5 +14,8 @@ namespace NewSoufanWeatherStation.iOS
     [Register ("WeatherStationViewController")]
     partial class WeatherStationViewController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

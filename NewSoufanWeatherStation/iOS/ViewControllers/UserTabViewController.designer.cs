@@ -11,8 +11,8 @@ using UIKit;
 
 namespace NewSoufanWeatherStation.iOS
 {
-    [Register ("EditViewController")]
-    partial class EditViewController
+    [Register ("UserTabViewController")]
+    partial class UserTabViewController
     {
         void ReleaseDesignerOutlets ()
         {

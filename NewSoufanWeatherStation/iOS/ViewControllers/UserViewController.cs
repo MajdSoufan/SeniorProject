@@ -27,7 +27,6 @@ namespace NewSoufanWeatherStation.iOS
             {
                 UpdateEditCancelButtonsStatus("Edit", false, 0);
             }
-
         }
 
         partial void CancelButton_TouchUpInside(UIButton sender)
@@ -41,7 +40,8 @@ namespace NewSoufanWeatherStation.iOS
             CancelButton.Enabled = buttonEnabled;
 
             //Fade In/Out Animation
-            UIView.Animate(0.1,0, UIViewAnimationOptions.CurveEaseIn, ()=>
+            double fadingDuration = 0.1;
+            UIView.Animate(fadingDuration, 0, UIViewAnimationOptions.CurveEaseIn, ()=>
             {
                 CancelButton.Alpha = buttonAlpha;
             },null);

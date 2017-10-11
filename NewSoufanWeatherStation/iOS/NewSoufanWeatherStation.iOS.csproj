@@ -132,6 +132,10 @@
     <Compile Include="ViewControllers\EditViewController.designer.cs">
       <DependentUpon>EditViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControllers\UserTabViewController.cs" />
+    <Compile Include="ViewControllers\UserTabViewController.designer.cs">
+      <DependentUpon>UserTabViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="timessquare">
@@ -141,6 +145,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\weather-wallpaper.jpg" />
+    <BundleResource Include="Resources\weather-background.jpg" />
+    <BundleResource Include="Resources\sea-background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
