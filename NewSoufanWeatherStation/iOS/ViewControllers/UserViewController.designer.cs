@@ -36,6 +36,14 @@ namespace NewSoufanWeatherStation.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel PasswordConfLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField PasswordConfTextField { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField PasswordTextField { get; set; }
 
         [Action ("CancelButton_TouchUpInside:")]
@@ -71,6 +79,16 @@ namespace NewSoufanWeatherStation.iOS
             if (LastNameTextField != null) {
                 LastNameTextField.Dispose ();
                 LastNameTextField = null;
+            }
+
+            if (PasswordConfLabel != null) {
+                PasswordConfLabel.Dispose ();
+                PasswordConfLabel = null;
+            }
+
+            if (PasswordConfTextField != null) {
+                PasswordConfTextField.Dispose ();
+                PasswordConfTextField = null;
             }
 
             if (PasswordTextField != null) {
