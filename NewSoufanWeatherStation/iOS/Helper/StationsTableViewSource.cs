@@ -33,6 +33,7 @@ namespace NewSoufanWeatherStation.iOS
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
             var selectedSerialNum = serialNums[indexPath.Row];
+
         }
     }
 }
