@@ -174,7 +174,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="********" minimumFontSize="17" id="37027" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" enabled="NO" alpha="0">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="*********" minimumFontSize="17" id="37027" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" enabled="NO" alpha="0">
                                         <rect key="frame" x="46" y="420" width="256" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -463,11 +463,11 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28336" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-810" y="1082"/>
+            <point key="canvasLocation" x="-276" y="972"/>
         </scene>
         <scene sceneID="28908">
             <objects>
-                <tableViewController id="28909" sceneMemberID="viewController" title="Stations" hasRefreshControl="0">
+                <tableViewController id="28909" sceneMemberID="viewController" title="Stations" hasRefreshControl="0" customClass="StationsTableViewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="28910">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -491,6 +491,9 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0" vertical="-15"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="StationsTable" destination="28910" id="name-outlet-28910"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28915" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
