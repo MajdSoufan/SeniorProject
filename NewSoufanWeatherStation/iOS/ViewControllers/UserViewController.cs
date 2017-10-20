@@ -29,10 +29,20 @@ namespace NewSoufanWeatherStation.iOS
                 EmailText = EmailTextField.Text;
                 PasswordText = PasswordTextField.Text;
                 PasswordConfText = PasswordConfTextField.Text;
+
             }
             else
             {
-                UpdateUIElements("Edit", false, 0, UITextBorderStyle.None, (float)7.0);
+                if (CheckPasswordConfirmation())
+                {
+                    UpdateUIElements("Edit", false, 0, UITextBorderStyle.None, (float)7.0);
+                }
+                else
+                {
+                    UIAlertView alert = new UIAlertView() { Title = "Warning", Message = "Passowrds do not match", };
+                    alert.AddButton("OK");
+                    alert.Show();
+                }
 
             }
         }
@@ -47,6 +57,11 @@ namespace NewSoufanWeatherStation.iOS
             PasswordConfTextField.Text = PasswordConfText;
         }
 
+
+        private bool CheckPasswordConfirmation()
+        {
+            return PasswordTextField.Text.Equals(PasswordConfTextField.Text);
+        }
 
         private void UpdateUIElements(String buttonText, bool buttonEnabled, float buttonAlpha, UITextBorderStyle borderStyle, float offset)
         {

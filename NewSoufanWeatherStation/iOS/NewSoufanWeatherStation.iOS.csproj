@@ -131,10 +131,6 @@
     <Compile Include="ViewControllers\WeatherStationViewController.designer.cs">
       <DependentUpon>WeatherStationViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\EditViewController.cs" />
-    <Compile Include="ViewControllers\EditViewController.designer.cs">
-      <DependentUpon>EditViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\UserTabViewController.cs" />
     <Compile Include="ViewControllers\UserTabViewController.designer.cs">
       <DependentUpon>UserTabViewController.cs</DependentUpon>

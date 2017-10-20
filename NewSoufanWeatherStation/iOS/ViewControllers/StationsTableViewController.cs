@@ -22,17 +22,17 @@ namespace NewSoufanWeatherStation.iOS
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
 
-            var serialNums = StationsList.Select((obj) =>  obj.SerialNumber).ToList();
+            var serialNums = StationsList.Select((obj) =>  obj.Name).ToList();
 
             StationsTable.Source = new StationsTableViewSource(serialNums);
         }
 
         private void ConstructWeatherStations()
         {
-            StationsList.Add(new Model.WeatherStation("011232342423", "110.22.13.11"));
-            StationsList.Add(new Model.WeatherStation("019488238423", "113.12.73.12"));
-            StationsList.Add(new Model.WeatherStation("019090807014", "144.25.63.13"));
-            StationsList.Add(new Model.WeatherStation("011209887766", "155.52.23.14"));
+            StationsList.Add(new Model.WeatherStation("011232342423", "110.22.13.11", "Backyard Station"));
+            StationsList.Add(new Model.WeatherStation("019488238423", "113.12.73.12", "Frontyard Station"));
+            StationsList.Add(new Model.WeatherStation("019090807014", "144.25.63.13", "Porch Station"));
+            StationsList.Add(new Model.WeatherStation("011209887766", "155.52.23.14", "Barn Station"));
 
         }
     }
