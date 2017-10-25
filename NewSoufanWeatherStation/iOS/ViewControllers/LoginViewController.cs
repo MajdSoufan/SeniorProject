@@ -1,13 +1,25 @@
 using Foundation;
 using System;
+using System.IO;
+using SQLite;
 using UIKit;
 
 namespace NewSoufanWeatherStation.iOS
 {
     public partial class LoginViewController : UIViewController
     {
+        public static string DataBase_Path = string.Empty;
+
         public LoginViewController(IntPtr handle) : base(handle)
         {
+            var documentsFolder = Environment.GetFolderPath((Environment.SpecialFolder.Personal));
+            DataBase_Path = Path.Combine(documentsFolder, "weather_station_db.db");
+
+            //using (var connection = new SQLite.SQLiteConnection(DataBase_Path))
+            //{
+              //  connection.CreateTable<Users>();
+            //}
+
         }
 
         public override void ViewDidLoad()
@@ -15,6 +27,7 @@ namespace NewSoufanWeatherStation.iOS
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
 
+           
         }
 
         public override void DidReceiveMemoryWarning()
@@ -30,9 +43,7 @@ namespace NewSoufanWeatherStation.iOS
 
         partial void ClickLoginButton(UIButton sender)
         {
-            // How to create a segue with out storyboard
-            //UserViewController userView = this.Storyboard.InstantiateViewController("UserViewController") as UserViewController;
-            //this.NavigationController.PushViewController(userView, true);
+            
         }
     }
 }

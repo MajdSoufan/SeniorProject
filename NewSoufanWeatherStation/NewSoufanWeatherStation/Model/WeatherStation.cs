@@ -1,8 +1,13 @@
 ﻿using System;
+using SQLite;
+
 namespace NewSoufanWeatherStation.Model
 {
     public class WeatherStation
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+
         public string SerialNumber { get; set; }
         public string MacAddress { get; set; }
         public string Name { get; set; }
