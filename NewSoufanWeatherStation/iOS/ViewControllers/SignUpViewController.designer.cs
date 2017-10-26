@@ -16,6 +16,26 @@ namespace NewSoufanWeatherStation.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField EmailField { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField FirstNameField { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField LastNameField { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField PasswordConfField { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField PasswordField { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton SubmitButton { get; set; }
 
         [Action ("SubmitButton_TouchUpInside:")]
@@ -24,6 +44,31 @@ namespace NewSoufanWeatherStation.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (EmailField != null) {
+                EmailField.Dispose ();
+                EmailField = null;
+            }
+
+            if (FirstNameField != null) {
+                FirstNameField.Dispose ();
+                FirstNameField = null;
+            }
+
+            if (LastNameField != null) {
+                LastNameField.Dispose ();
+                LastNameField = null;
+            }
+
+            if (PasswordConfField != null) {
+                PasswordConfField.Dispose ();
+                PasswordConfField = null;
+            }
+
+            if (PasswordField != null) {
+                PasswordField.Dispose ();
+                PasswordField = null;
+            }
+
             if (SubmitButton != null) {
                 SubmitButton.Dispose ();
                 SubmitButton = null;

@@ -314,6 +314,11 @@
                     </view>
                     <connections>
                         <outlet property="SubmitButton" destination="12573" id="name-outlet-12573"/>
+                        <outlet property="FirstNameField" destination="12578" id="name-outlet-12578"/>
+                        <outlet property="LastNameField" destination="12579" id="name-outlet-12579"/>
+                        <outlet property="EmailField" destination="12580" id="name-outlet-12580"/>
+                        <outlet property="PasswordField" destination="12581" id="name-outlet-12581"/>
+                        <outlet property="PasswordConfField" destination="12582" id="name-outlet-12582"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9216" userLabel="First Responder" sceneMemberID="firstResponder"/>
