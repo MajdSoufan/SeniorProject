@@ -162,6 +162,7 @@
     <Compile Include="Helper\StationsTableViewSource.cs" />
     <Compile Include="SQLite\SQLite.cs" />
     <Compile Include="SQLite\SQLiteAsync.cs" />
+    <Compile Include="Helper\DataBaseInitiator.cs" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="timessquare">

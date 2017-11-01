@@ -1,5 +1,7 @@
 ﻿using System;
 using SQLite;
+using System.Collections.Generic;
+
 
 namespace NewSoufanWeatherStation.Model
 {
@@ -8,10 +10,11 @@ namespace NewSoufanWeatherStation.Model
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
+        public string Name { get; set; }
         public string SerialNumber { get; set; }
         public string MacAddress { get; set; }
-        public string Name { get; set; }
 
+        public List<WeatherData> WeatherList { get; set; }
 
         public WeatherStation()
         {

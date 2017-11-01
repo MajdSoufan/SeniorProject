@@ -17,6 +17,7 @@ namespace NewSoufanWeatherStation.iOS
 		{
 			base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
+
 		}
 
 		public override void DidReceiveMemoryWarning()
@@ -33,6 +34,7 @@ namespace NewSoufanWeatherStation.iOS
             ValidateEntries(EmailField);
             ValidateEntries(PasswordField);
             ValidateEntries(PasswordConfField);
+
             if (!IsEmptyEntries())
             {
                 if (PasswordConfirmation())
