@@ -14,8 +14,16 @@ namespace NewSoufanWeatherStation.iOS
     [Register ("WeatherStationViewController")]
     partial class WeatherStationViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel SerialNumberLabel { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (SerialNumberLabel != null) {
+                SerialNumberLabel.Dispose ();
+                SerialNumberLabel = null;
+            }
         }
     }
 }

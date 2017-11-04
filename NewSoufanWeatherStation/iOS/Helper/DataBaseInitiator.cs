@@ -17,11 +17,19 @@ namespace NewSoufanWeatherStation.iOS
             var documentsFolder = Environment.GetFolderPath((Environment.SpecialFolder.Personal));
             DataBase_Path = Path.Combine(documentsFolder, "weather_station_db.db");
 
-            using (var connection = new SQLite.SQLiteConnection(DataBase_Path))
+            using (var dbConnection = new SQLite.SQLiteConnection(DataBase_Path))
             {
-                connection.CreateTable<Model.User>();
-               // connection.CreateTable<Model.WeatherStation>();
+                //connection.CreateTable<Model.User>();
+                dbConnection.CreateTable<Model.WeatherStation>();
+
             }
+
+        }
+
+        public static void SetDataBasePath(string folderPath)
+        {
+            var documentsFolder = Environment.GetFolderPath((Environment.SpecialFolder.Personal));
+            DataBase_Path = Path.Combine(documentsFolder, folderPath);
 
         }
 

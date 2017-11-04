@@ -379,6 +379,9 @@
                             </label>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="SerialNumberLabel" destination="37617" id="name-outlet-37617"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10487" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
