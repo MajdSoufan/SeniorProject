@@ -456,7 +456,7 @@
         </scene>
         <scene sceneID="37644">
             <objects>
-                <viewController id="37645" sceneMemberID="viewController">
+                <viewController id="37645" sceneMemberID="viewController" customClass="DataForm2Controller">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="37640"/>
                         <viewControllerLayoutGuide type="bottom" id="37641"/>
@@ -476,7 +476,7 @@
         </scene>
         <scene sceneID="37649">
             <objects>
-                <viewController id="37650" sceneMemberID="viewController">
+                <viewController id="37650" sceneMemberID="viewController" customClass="DataForm1Controller">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="37642"/>
                         <viewControllerLayoutGuide type="bottom" id="37643"/>
@@ -514,7 +514,7 @@
         </scene>
         <scene sceneID="37753">
             <objects>
-                <viewController id="37754" sceneMemberID="viewController">
+                <viewController id="37754" sceneMemberID="viewController" customClass="DataForm3Controller">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="37751"/>
                         <viewControllerLayoutGuide type="bottom" id="37752"/>

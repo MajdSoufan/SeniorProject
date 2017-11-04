@@ -1,6 +1,8 @@
 using Foundation;
 using System;
 using UIKit;
+using System.Linq;
+using BarChart;
 
 namespace NewSoufanWeatherStation.iOS
 {
@@ -25,6 +27,7 @@ namespace NewSoufanWeatherStation.iOS
             MacAddLabel.Text = WeatherStation.MacAddress;
 
             this.Title = "Weather Stataion Data";
+            InstantiateChart();
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
@@ -37,6 +40,19 @@ namespace NewSoufanWeatherStation.iOS
                 weatherStationViewController.WeatherStation = WeatherStation;
 
             }
+        }
+
+        private void InstantiateChart()
+        {
+            var tempData = WeatherStation.WeatherList.Select((obj) => obj.Temparature).ToArray();
+            var chart = new BarChartView
+            {
+                Frame = View.Frame,
+                ItemsSource = Array.ConvertAll(tempData, v => new BarModel { Value = v })
+            };
+
+            View.AddSubview(chart);
+
         }
     }
 }

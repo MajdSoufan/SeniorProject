@@ -103,6 +103,9 @@
     <Reference Include="SQLitePCLRaw.batteries_v2">
       <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.8\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Controls.BarChart.iOS">
+      <HintPath>..\Components\barchart-1.1.2.1\lib\ios-unified\Xamarin.Controls.BarChart.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewSoufanWeatherStation\NewSoufanWeatherStation.csproj">
@@ -159,10 +162,26 @@
     </Compile>
     <Compile Include="Helper\StationsTableViewSource.cs" />
     <Compile Include="Helper\DataBaseInitiator.cs" />
+    <Compile Include="ViewControllers\DataForm1Controller.cs" />
+    <Compile Include="ViewControllers\DataForm1Controller.designer.cs">
+      <DependentUpon>DataForm1Controller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\DataForm2Controller.cs" />
+    <Compile Include="ViewControllers\DataForm2Controller.designer.cs">
+      <DependentUpon>DataForm2Controller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\DataForm3Controller.cs" />
+    <Compile Include="ViewControllers\DataForm3Controller.designer.cs">
+      <DependentUpon>DataForm3Controller.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="timessquare">
       <Version>1.0.5</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="barchart">
+      <Version>1.1.2.1</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>
