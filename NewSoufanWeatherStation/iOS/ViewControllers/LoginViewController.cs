@@ -18,7 +18,7 @@ namespace NewSoufanWeatherStation.iOS
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
-            new DataBaseInitiatior();
+            //new DataBaseInitiatior();
            
         }
 

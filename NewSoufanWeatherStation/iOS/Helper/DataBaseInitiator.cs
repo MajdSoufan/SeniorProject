@@ -20,7 +20,7 @@ namespace NewSoufanWeatherStation.iOS
             using (var dbConnection = new SQLite.SQLiteConnection(DataBase_Path))
             {
                 //connection.CreateTable<Model.User>();
-                dbConnection.CreateTable<Model.WeatherStation>();
+                //dbConnection.CreateTable<Model.WeatherStation>();
 
             }
 

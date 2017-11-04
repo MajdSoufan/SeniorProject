@@ -119,7 +119,6 @@
     <Folder Include="Resources\" />
     <Folder Include="ViewControllers\" />
     <Folder Include="Helper\" />
-    <Folder Include="SQLite\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -128,7 +127,6 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
-    <None Include="SQLite\packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -160,8 +158,6 @@
       <DependentUpon>StationsTableViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\StationsTableViewSource.cs" />
-    <Compile Include="SQLite\SQLite.cs" />
-    <Compile Include="SQLite\SQLiteAsync.cs" />
     <Compile Include="Helper\DataBaseInitiator.cs" />
   </ItemGroup>
   <ItemGroup>

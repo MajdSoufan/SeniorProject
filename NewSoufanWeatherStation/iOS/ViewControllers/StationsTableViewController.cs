@@ -22,9 +22,8 @@ namespace NewSoufanWeatherStation.iOS
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
 
-            var serialNums = StationsList.Select((obj) =>  obj.Name).ToList();
 
-            StationsTable.Source = new StationsTableViewSource(serialNums);
+            StationsTable.Source = new StationsTableViewSource(this, StationsList);
         }
 
         private void ConstructWeatherStations()
