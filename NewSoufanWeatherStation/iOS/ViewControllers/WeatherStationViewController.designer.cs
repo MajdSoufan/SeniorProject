@@ -26,6 +26,10 @@ namespace NewSoufanWeatherStation.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel SerialNumberLabel { get; set; }
 
+        [Action ("WeatherInfoButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void WeatherInfoButton_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (MacAddLabel != null) {

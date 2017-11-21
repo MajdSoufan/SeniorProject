@@ -29,34 +29,36 @@ namespace NewSoufanWeatherStation.Model
             SetInitialWeatherData();
         }
 
+
         private void SetInitialWeatherData()
         {
             WeatherList = new List<WeatherData>();
             WeatherList.Add(new WeatherData
             {
-                Temparature = 60,
+                Temparature = 82,
                 Date = new DateTime(2017, 10, 1)
             });
             WeatherList.Add(new WeatherData
             {
-                Temparature = 60,
+                Temparature = 92,
                 Date = new DateTime(2017, 10, 2)
             });
             WeatherList.Add(new WeatherData
             {
-                Temparature = 60,
+                Temparature = 90,
                 Date = new DateTime(2017, 10, 3)
             });
             WeatherList.Add(new WeatherData
             {
-                Temparature = 60,
+                Temparature = 80,
                 Date = new DateTime(2017, 10, 4)
             });
             WeatherList.Add(new WeatherData
             {
-                Temparature = 60,
+                Temparature = 95,
                 Date = new DateTime(2017, 10, 5)
             });
+
         }
     }
 }

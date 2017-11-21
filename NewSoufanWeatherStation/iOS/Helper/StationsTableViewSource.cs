@@ -48,7 +48,6 @@ namespace NewSoufanWeatherStation.iOS
 
             }
           
-            // var controller = new WeatherStationViewController(this);
             tableView.DeselectRow(indexPath, true);
 
         }

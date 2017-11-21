@@ -27,7 +27,6 @@ namespace NewSoufanWeatherStation.iOS
             MacAddLabel.Text = WeatherStation.MacAddress;
 
             this.Title = "Weather Stataion Data";
-            InstantiateChart();
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
@@ -42,17 +41,26 @@ namespace NewSoufanWeatherStation.iOS
             }
         }
 
-        private void InstantiateChart()
+
+        partial void WeatherInfoButton_TouchUpInside(UIButton sender)
         {
-            var tempData = WeatherStation.WeatherList.Select((obj) => obj.Temparature).ToArray();
-            var chart = new BarChartView
+            //ViewControllers.DataFormsTabController dataFormTabController = this.Storyboard.InstantiateViewController
+            //    ("ViewControllers.DataFormsTabController") as ViewControllers.DataFormsTabController;
+            //if (dataFormTabController != null)
+            //{
+            //    dataFormTabController.WeatherStation = this.WeatherStation;
+            //    this.NavigationController.PushViewController(dataFormTabController, true);
+
+            //}
+
+            DataForm1Controller dataForm1TabController = this.Storyboard.InstantiateViewController
+                        ("DataForm1Controller") as DataForm1Controller;
+            if (dataForm1TabController != null)
             {
-                Frame = View.Frame,
-                ItemsSource = Array.ConvertAll(tempData, v => new BarModel { Value = v })
-            };
+                dataForm1TabController.WeatherStation = this.WeatherStation;
+                this.NavigationController.PushViewController(dataForm1TabController, true);
 
-            View.AddSubview(chart);
-
+            }
         }
     }
 }

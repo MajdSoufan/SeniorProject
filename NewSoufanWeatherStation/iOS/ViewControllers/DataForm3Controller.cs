@@ -9,5 +9,9 @@ namespace NewSoufanWeatherStation.iOS
         public DataForm3Controller (IntPtr handle) : base (handle)
         {
         }
+
+        public DataForm3Controller() : base()
+        {
+        }
     }
 }

@@ -19,8 +19,8 @@ namespace NewSoufanWeatherStation.iOS
 
             using (var dbConnection = new SQLite.SQLiteConnection(DataBase_Path))
             {
-                //connection.CreateTable<Model.User>();
-                //dbConnection.CreateTable<Model.WeatherStation>();
+                dbConnection.CreateTable<Model.User>();
+                dbConnection.CreateTable<Model.WeatherStation>();
 
             }
 
@@ -30,6 +30,12 @@ namespace NewSoufanWeatherStation.iOS
         {
             var documentsFolder = Environment.GetFolderPath((Environment.SpecialFolder.Personal));
             DataBase_Path = Path.Combine(documentsFolder, folderPath);
+
+        }
+
+        public static void CreateTable(string tableName)
+        {
+
 
         }
 
