@@ -8,7 +8,7 @@ namespace NewSoufanWeatherStation.iOS
 {
     public partial class DataForm1Controller : UIViewController
     {
-        public Model.WeatherStation WeatherStation { get; set; }
+        public static Model.WeatherStation WeatherStation { get; set; }
 
         public DataForm1Controller (IntPtr handle) : base (handle)
         {
@@ -28,17 +28,18 @@ namespace NewSoufanWeatherStation.iOS
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
-            var dataForm1Controller = segue.DestinationViewController as DataForm1Controller;
+            //var dataForm1Controller = segue.DestinationViewController as DataForm1Controller;
 
-            if (dataForm1Controller != null)
-            {
-                dataForm1Controller.WeatherStation = WeatherStation;
+            //if (dataForm1Controller != null)
+            //{
+            //    dataForm1Controller.WeatherStation = WeatherStation;
 
-            }
+            //}
         }
 
         private void InstantiateChart()
         {
+            
 
             var tempData = WeatherStation.WeatherList.Select((obj) => obj.Temparature).ToArray();
             var chart = new BarChartView
@@ -47,7 +48,7 @@ namespace NewSoufanWeatherStation.iOS
                 ItemsSource = Array.ConvertAll(tempData, v => new BarModel { Value = v })
             };
 
-            View.AddSubview(chart);
+            this.View.AddSubview(chart);
 
         }
     }

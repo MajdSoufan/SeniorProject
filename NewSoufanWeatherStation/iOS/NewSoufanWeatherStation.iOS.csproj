@@ -106,6 +106,15 @@
     <Reference Include="Xamarin.Controls.BarChart.iOS">
       <HintPath>..\Components\barchart-1.1.2.1\lib\ios-unified\Xamarin.Controls.BarChart.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="Intersoft.Crosslight.UI.DataVisualization.iOS">
+      <HintPath>..\Components\crosslight-charting-4.0\lib\ios-unified\Intersoft.Crosslight.UI.DataVisualization.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Intersoft.Crosslight.iOS">
+      <HintPath>..\Components\crosslight-charting-4.0\lib\ios-unified\Intersoft.Crosslight.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Alliance.Charts">
+      <HintPath>..\Components\AllianceChart-2.0\lib\ios-unified\Alliance.Charts.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewSoufanWeatherStation\NewSoufanWeatherStation.csproj">
@@ -130,6 +139,8 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="Scripts\Chart.js" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -186,6 +197,14 @@
     </XamarinComponentReference>
     <XamarinComponentReference Include="barchart">
       <Version>1.1.2.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="crosslight-charting">
+      <Version>4.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="AllianceChart">
+      <Version>2.0</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>

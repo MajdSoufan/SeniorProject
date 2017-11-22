@@ -44,23 +44,21 @@ namespace NewSoufanWeatherStation.iOS
 
         partial void WeatherInfoButton_TouchUpInside(UIButton sender)
         {
-            //ViewControllers.DataFormsTabController dataFormTabController = this.Storyboard.InstantiateViewController
-            //    ("ViewControllers.DataFormsTabController") as ViewControllers.DataFormsTabController;
-            //if (dataFormTabController != null)
+
+            //DataForm1Controller dataForm1TabController = this.Storyboard.InstantiateViewController
+            //            ("DataForm1Controller") as DataForm1Controller;
+            //if (dataForm1TabController != null)
             //{
-            //    dataFormTabController.WeatherStation = this.WeatherStation;
-            //    this.NavigationController.PushViewController(dataFormTabController, true);
+            //    //dataForm1TabController.WeatherStation = this.WeatherStation;
+            //    DataForm1Controller.WeatherStation = this.WeatherStation;
+
+            //    this.NavigationController.PushViewController(dataForm1TabController, true);
 
             //}
+            DataForm1Controller.WeatherStation = this.WeatherStation;
+            DataForm2Controller.WeatherStation = this.WeatherStation;
+            DataForm3Controller.WeatherStation = this.WeatherStation;
 
-            DataForm1Controller dataForm1TabController = this.Storyboard.InstantiateViewController
-                        ("DataForm1Controller") as DataForm1Controller;
-            if (dataForm1TabController != null)
-            {
-                dataForm1TabController.WeatherStation = this.WeatherStation;
-                this.NavigationController.PushViewController(dataForm1TabController, true);
-
-            }
         }
     }
 }

@@ -14,5 +14,8 @@ namespace NewSoufanWeatherStation.iOS
     [Register ("DataForm1Controller")]
     partial class DataForm1Controller
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }
