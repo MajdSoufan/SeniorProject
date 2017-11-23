@@ -24,7 +24,6 @@ namespace NewSoufanWeatherStation.iOS
         {
             base.ViewDidLoad();
             this.TheAllianceChart = new AllianceChart(Chart.Pie, this.SubView);
-
             createPieChart();
 
             this.SubView.SetNeedsDisplay();
@@ -45,6 +44,7 @@ namespace NewSoufanWeatherStation.iOS
                 ChartComponent.Name = weatherData.PrintDate();
                 ChartComponent.value = weatherData.Temparature;
                 ChartComponent.color = GetRandomColor(randomColorNum);
+
                 ChartComponent.lableColor = UIColor.Black;
                 Components.Add(ChartComponent);
 
@@ -58,10 +58,7 @@ namespace NewSoufanWeatherStation.iOS
 
         public UIColor GetRandomColor(int hue)
         {
-            return UIColor.FromHSB(
-                (hue / 255.0f),
-                1.0f,
-                1.0f);
+            return UIColor.FromHSB((hue / 255.0f), 1.0f, 1.0f);
         }
     }
 }

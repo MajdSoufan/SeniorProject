@@ -16,6 +16,14 @@ namespace NewSoufanWeatherStation.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel FilterLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView FilterView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel MacAddLabel { get; set; }
 
         [Outlet]
@@ -32,6 +40,16 @@ namespace NewSoufanWeatherStation.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (FilterLabel != null) {
+                FilterLabel.Dispose ();
+                FilterLabel = null;
+            }
+
+            if (FilterView != null) {
+                FilterView.Dispose ();
+                FilterView = null;
+            }
+
             if (MacAddLabel != null) {
                 MacAddLabel.Dispose ();
                 MacAddLabel = null;

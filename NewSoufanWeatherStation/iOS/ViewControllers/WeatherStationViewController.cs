@@ -21,6 +21,8 @@ namespace NewSoufanWeatherStation.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            FilterLabel.Layer.BorderColor = UIColor.Black.CGColor;
+            FilterLabel.Layer.BorderWidth = 2;
             // Perform any additional setup after loading the view, typically from a nib.
             NameLabel.Text = WeatherStation.Name;
             SerialNumberLabel.Text = WeatherStation.SerialNumber;
