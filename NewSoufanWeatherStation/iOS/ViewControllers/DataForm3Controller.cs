@@ -44,7 +44,7 @@ namespace NewSoufanWeatherStation.iOS
                 int randomColorNum = rand.Next(255);
 
                 ChartComponent.Name = weatherData.PrintDate();
-                ChartComponent.value = weatherData.Temparature;
+                ChartComponent.value = GetChosenData(weatherData);
                 ChartComponent.color = GetRandomColor(randomColorNum);
 
                 ChartComponent.lableColor = UIColor.Black;
@@ -61,6 +61,27 @@ namespace NewSoufanWeatherStation.iOS
         public UIColor GetRandomColor(int hue)
         {
             return UIColor.FromHSB((hue / 255.0f), 1.0f, 1.0f);
+        }
+
+        private float GetChosenData(Model.WeatherData weatherData)
+        {
+            if (FilteredObject.Data.Equals(Helper.FilteredData.Temp))
+            {
+                return weatherData.Temparature;
+            }
+            else if (FilteredObject.Data.Equals(Helper.FilteredData.Rain))
+            {
+                return weatherData.RainAmount;
+            }
+            else if (FilteredObject.Data.Equals(Helper.FilteredData.Wind))
+            {
+                return weatherData.WindSpeed;
+            }
+            else
+            {
+                return weatherData.Humidity;
+            }
+
         }
     }
 }

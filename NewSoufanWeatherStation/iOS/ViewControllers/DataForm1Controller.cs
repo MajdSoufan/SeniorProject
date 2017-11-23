@@ -27,6 +27,8 @@ namespace NewSoufanWeatherStation.iOS
             base.ViewDidLoad();
 
             Title = FilteredObject.Data.ToString();
+            NavigationItem.Title = FilteredObject.Data.ToString();
+
             this.TheAllianceChart = new AllianceChart(Chart.Line, this.SubView);      
             createLineChart();
 
@@ -51,12 +53,12 @@ namespace NewSoufanWeatherStation.iOS
             List<ChartComponent> components = new List<ChartComponent>();
 
             ChartComponent ChartComponent = new ChartComponent();
-            ChartComponent.Name = "temp";
+            ChartComponent.Name = "data";
 
             List<float?> values = new List<float?>();
             WeatherStation.WeatherList.ForEach((weatherData) =>
             {
-                values.Add(weatherData.Temparature);
+                values.Add(GetChosenData(weatherData));
             });
             ChartComponent.valueList = values;
             ChartComponent.color = UIColor.FromRGB(23f / 255f, 169f / 255f, 227f / 255f);
@@ -71,7 +73,26 @@ namespace NewSoufanWeatherStation.iOS
         }
 
 
+        private float GetChosenData(Model.WeatherData weatherData)
+        {
+            if (FilteredObject.Data.Equals(Helper.FilteredData.Temp))
+            {
+                return weatherData.Temparature;
+            }
+            else if (FilteredObject.Data.Equals(Helper.FilteredData.Rain))
+            {
+                return weatherData.RainAmount;
+            }
+            else if (FilteredObject.Data.Equals(Helper.FilteredData.Wind))
+            {
+                return weatherData.WindSpeed;
+            }
+            else 
+            {
+                return weatherData.Humidity;
+            }
 
+        }
 
 
 
