@@ -115,6 +115,12 @@
     <Reference Include="Alliance.Charts">
       <HintPath>..\Components\AllianceChart-2.0\lib\ios-unified\Alliance.Charts.dll</HintPath>
     </Reference>
+    <Reference Include="OxyPlot">
+      <HintPath>..\packages\OxyPlot.Core.2015.1.744-alpha\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Xamarin.iOS">
+      <HintPath>..\packages\OxyPlot.Mobile.2015.1.744-alpha\lib\Xamarin.iOS10\OxyPlot.Xamarin.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewSoufanWeatherStation\NewSoufanWeatherStation.csproj">
@@ -205,6 +211,10 @@
     </XamarinComponentReference>
     <XamarinComponentReference Include="AllianceChart">
       <Version>2.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="oxyplot">
+      <Version>2015.1.744</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>

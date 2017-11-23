@@ -14,8 +14,16 @@ namespace NewSoufanWeatherStation.iOS
     [Register ("DataForm1Controller")]
     partial class DataForm1Controller
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView SubView { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (SubView != null) {
+                SubView.Dispose ();
+                SubView = null;
+            }
         }
     }
 }

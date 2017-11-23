@@ -23,38 +23,45 @@ namespace NewSoufanWeatherStation.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            this.TheAllianceChart = new AllianceChart(Chart.Pie, this.SubView);
 
-            this.TheAllianceChart = new AllianceChart(Chart.Line, this.SubView);      
-            createLineChart();
+            createPieChart();
 
             this.SubView.SetNeedsDisplay();
         }
 
-        public void createLineChart()
+        public void createPieChart()
         {
+            List<ChartComponent> Components = new List<ChartComponent>();
 
-            TheAllianceChart.LineChartView.XLabels = WeatherStation.WeatherList.Select((obj) => obj.PrintDate()).ToList();;
-            TheAllianceChart.LineChartView.PopOverTextColor = UIColor.White;
-            List<ChartComponent> components = new List<ChartComponent>();
+            Random rand = new Random();
 
-            ChartComponent ChartComponent = new ChartComponent();
-            ChartComponent.Name = "temp";
-
-            List<float?> values = new List<float?>();
             WeatherStation.WeatherList.ForEach((weatherData) =>
             {
-                values.Add(weatherData.Temparature);
+                ChartComponent ChartComponent = new ChartComponent();
+
+                int randomColorNum = rand.Next(255);
+
+                ChartComponent.Name = weatherData.PrintDate();
+                ChartComponent.value = weatherData.Temparature;
+                ChartComponent.color = GetRandomColor(randomColorNum);
+                ChartComponent.lableColor = UIColor.Black;
+                Components.Add(ChartComponent);
+
             });
-            ChartComponent.valueList = values;
-            ChartComponent.color = UIColor.FromRGB(23f / 255f, 169f / 255f, 227f / 255f);
-            ChartComponent.lableColor = UIColor.Black;
-            components.Add(ChartComponent);
 
 
-            // Add more ChartComponent for more Lines in the Line Chart
+            //Add more ChartComponent for more Slices in Pie Chart
 
-            TheAllianceChart.LoadChart(components, Chart.Line, this.SubView);
+            TheAllianceChart.LoadChart(Components, Chart.Pie, this.SubView);
+        }
 
+        public UIColor GetRandomColor(int hue)
+        {
+            return UIColor.FromHSB(
+                (hue / 255.0f),
+                1.0f,
+                1.0f);
         }
     }
 }

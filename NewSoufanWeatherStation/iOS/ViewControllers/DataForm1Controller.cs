@@ -1,14 +1,17 @@
 using Foundation;
 using System;
 using UIKit;
-using BarChart;
 using System.Linq;
+using Alliance.Charts;
+using System.Collections.Generic;
+
 
 namespace NewSoufanWeatherStation.iOS
 {
     public partial class DataForm1Controller : UIViewController
     {
         public static Model.WeatherStation WeatherStation { get; set; }
+        public AllianceChart TheAllianceChart { get; set; }
 
         public DataForm1Controller (IntPtr handle) : base (handle)
         {
@@ -18,38 +21,55 @@ namespace NewSoufanWeatherStation.iOS
         {
         }
 
-        public override void ViewDidLoad()
-        {
+        public override void ViewDidLoad ()
+        {   
             base.ViewDidLoad();
-            // Perform any additional setup after loading the view, typically from a nib.
-            InstantiateChart();
-        }
+
+            this.TheAllianceChart = new AllianceChart(Chart.Line, this.SubView);      
+            createLineChart();
+
+
+            this.SubView.SetNeedsDisplay();
+        } 
+
+
+
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
-            //var dataForm1Controller = segue.DestinationViewController as DataForm1Controller;
 
-            //if (dataForm1Controller != null)
-            //{
-            //    dataForm1Controller.WeatherStation = WeatherStation;
-
-            //}
         }
 
-        private void InstantiateChart()
+        public void createLineChart()
         {
-            
 
-            var tempData = WeatherStation.WeatherList.Select((obj) => obj.Temparature).ToArray();
-            var chart = new BarChartView
+            TheAllianceChart.LineChartView.XLabels = WeatherStation.WeatherList.Select((obj) => obj.PrintDate()).ToList(); ;
+            TheAllianceChart.LineChartView.PopOverTextColor = UIColor.White;
+            List<ChartComponent> components = new List<ChartComponent>();
+
+            ChartComponent ChartComponent = new ChartComponent();
+            ChartComponent.Name = "temp";
+
+            List<float?> values = new List<float?>();
+            WeatherStation.WeatherList.ForEach((weatherData) =>
             {
-                Frame = View.Frame,
-                ItemsSource = Array.ConvertAll(tempData, v => new BarModel { Value = v })
-            };
+                values.Add(weatherData.Temparature);
+            });
+            ChartComponent.valueList = values;
+            ChartComponent.color = UIColor.FromRGB(23f / 255f, 169f / 255f, 227f / 255f);
+            ChartComponent.lableColor = UIColor.Black;
+            components.Add(ChartComponent);
 
-            this.View.AddSubview(chart);
+
+            // Add more ChartComponent for more Lines in the Line Chart
+
+            TheAllianceChart.LoadChart(components, Chart.Line, this.SubView);
 
         }
+
+
+
+
     }
 }
