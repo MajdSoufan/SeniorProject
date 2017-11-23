@@ -24,15 +24,15 @@ namespace NewSoufanWeatherStation.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch HumiditySwitch { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel MacAddLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel NameLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UISwitch PressureSwitch { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -66,6 +66,11 @@ namespace NewSoufanWeatherStation.iOS
                 FilterView = null;
             }
 
+            if (HumiditySwitch != null) {
+                HumiditySwitch.Dispose ();
+                HumiditySwitch = null;
+            }
+
             if (MacAddLabel != null) {
                 MacAddLabel.Dispose ();
                 MacAddLabel = null;
@@ -74,11 +79,6 @@ namespace NewSoufanWeatherStation.iOS
             if (NameLabel != null) {
                 NameLabel.Dispose ();
                 NameLabel = null;
-            }
-
-            if (PressureSwitch != null) {
-                PressureSwitch.Dispose ();
-                PressureSwitch = null;
             }
 
             if (RainSwitch != null) {

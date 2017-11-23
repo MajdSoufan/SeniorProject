@@ -10,6 +10,8 @@ namespace NewSoufanWeatherStation.iOS
     public partial class DataForm3Controller : UIViewController
     {
         public static Model.WeatherStation WeatherStation { get; set; }
+        public static Helper.FilterObject FilteredObject { get; set; }
+
         public AllianceChart TheAllianceChart { get; set; }
 
         public DataForm3Controller (IntPtr handle) : base (handle)

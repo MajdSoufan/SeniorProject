@@ -8,12 +8,10 @@ namespace NewSoufanWeatherStation.Model
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        public int Temparature { get; set; }
-        public int WindSpeed { get; set; }
-        public int Humidity { get; set; }
-        public int Pressure { get; set; }
-        public int RainAmount { get; set; }
-        public string WindDirection { get; set; }
+        public float Temparature { get; set; }
+        public float WindSpeed { get; set; }
+        public float Humidity { get; set; }
+        public float RainAmount { get; set; }
 
         public DateTime Date { get; set; }
 

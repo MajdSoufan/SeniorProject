@@ -28,6 +28,7 @@ namespace NewSoufanWeatherStation.iOS.ViewControllers
             //            };
 
             //ViewControllers = tabs;
+            Title = "Temp";
 
 
         }
@@ -36,7 +37,7 @@ namespace NewSoufanWeatherStation.iOS.ViewControllers
         {
             base.ViewDidLoad();
 
-
+            Title = "Temp";
         }
 
     }

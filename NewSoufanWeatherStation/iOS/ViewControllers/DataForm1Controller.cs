@@ -11,6 +11,7 @@ namespace NewSoufanWeatherStation.iOS
     public partial class DataForm1Controller : UIViewController
     {
         public static Model.WeatherStation WeatherStation { get; set; }
+        public static Helper.FilterObject FilteredObject { get; set; }
         public AllianceChart TheAllianceChart { get; set; }
 
         public DataForm1Controller (IntPtr handle) : base (handle)
@@ -25,6 +26,7 @@ namespace NewSoufanWeatherStation.iOS
         {   
             base.ViewDidLoad();
 
+            Title = FilteredObject.Data.ToString();
             this.TheAllianceChart = new AllianceChart(Chart.Line, this.SubView);      
             createLineChart();
 
@@ -67,6 +69,8 @@ namespace NewSoufanWeatherStation.iOS
             TheAllianceChart.LoadChart(components, Chart.Line, this.SubView);
 
         }
+
+
 
 
 

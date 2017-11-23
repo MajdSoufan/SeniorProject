@@ -195,6 +195,8 @@
     <Compile Include="ViewControllers\DataFormsTabController.designer.cs">
       <DependentUpon>DataFormsTabController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\FilterObject.cs" />
+    <Compile Include="Helper\FilteredData.cs" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="timessquare">

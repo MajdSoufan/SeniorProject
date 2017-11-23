@@ -9,6 +9,8 @@ namespace NewSoufanWeatherStation.iOS
     public partial class DataForm2Controller : UIViewController
     {
         public static Model.WeatherStation WeatherStation { get; set; }
+        public static Helper.FilterObject FilteredObject { get; set; }
+
         public AllianceChart AllianceChart { get; set; }
 
 

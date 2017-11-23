@@ -1,6 +1,7 @@
 using Foundation;
 using System;
 using UIKit;
+using System.Collections.Generic;
 using System.Linq;
 using BarChart;
 
@@ -9,6 +10,7 @@ namespace NewSoufanWeatherStation.iOS
     public partial class WeatherStationViewController : UIViewController
     {
         public Model.WeatherStation WeatherStation;
+        private List<UISwitch> SwitchesList;
 
         public WeatherStationViewController (IntPtr handle) : base (handle)
         {
@@ -21,6 +23,10 @@ namespace NewSoufanWeatherStation.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            SwitchesList = new List<UISwitch>();
+            AddSwitches();
+            AddFunctionalityToSwitches();
+
             FilterLabel.Layer.BorderColor = UIColor.Black.CGColor;
             FilterLabel.Layer.BorderWidth = 2;
             // Perform any additional setup after loading the view, typically from a nib.
@@ -61,6 +67,78 @@ namespace NewSoufanWeatherStation.iOS
             DataForm2Controller.WeatherStation = this.WeatherStation;
             DataForm3Controller.WeatherStation = this.WeatherStation;
 
+            Helper.FilterObject fileteredDataObject = new Helper.FilterObject
+            {
+                Data = GetDataChosen(),
+                StartDate = WeatherStation.WeatherList.First().Date,
+                EndDate = WeatherStation.WeatherList.Last().Date
+            };
+
+            DataForm1Controller.FilteredObject = fileteredDataObject;
+            DataForm2Controller.FilteredObject = fileteredDataObject;
+            DataForm3Controller.FilteredObject = fileteredDataObject;
+
         }
+
+        private void AddSwitches()
+        {
+            SwitchesList.Add(TempSwitch);
+            SwitchesList.Add(RainSwitch);
+            SwitchesList.Add(WindSwitch);
+            SwitchesList.Add(HumiditySwitch);
+        }
+
+        private void AddFunctionalityToSwitches()
+        {
+            SwitchesList.ForEach((uiSwitch)=>
+            {
+                uiSwitch.TouchUpInside += (sender,e) => 
+                { 
+                    SwitchesList.ForEach((eSwitch)=>
+                    {
+                        if (!eSwitch.Equals(uiSwitch))
+                        {
+                            eSwitch.On = false;                                
+                        }
+                    });
+                };
+            });
+        }
+
+        private Helper.FilteredData GetDataChosen()
+        {
+            Helper.FilteredData data = Helper.FilteredData.Temp;
+
+            SwitchesList.ForEach((uiSwitch)=>
+            {
+                if(uiSwitch.On)
+                {
+                    data = GetDataChosenHelper(uiSwitch);
+                }
+            });
+
+            return data;
+        }
+
+        private Helper.FilteredData GetDataChosenHelper(UISwitch eSwitch)
+        {
+            if (eSwitch.Equals(TempSwitch))
+            {
+                return Helper.FilteredData.Temp;
+            }
+            else if (eSwitch.Equals(RainSwitch))
+            {
+                return Helper.FilteredData.Rain;
+            }
+            else if (eSwitch.Equals(WindSwitch))
+            {
+                return Helper.FilteredData.Wind;
+            }
+            else
+            {
+                return Helper.FilteredData.Humidity;
+            }
+        }
+
     }
 }
