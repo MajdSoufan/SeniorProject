@@ -32,7 +32,23 @@ namespace NewSoufanWeatherStation.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch PressureSwitch { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch RainSwitch { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel SerialNumberLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch TempSwitch { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch WindSwitch { get; set; }
 
         [Action ("WeatherInfoButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -60,9 +76,29 @@ namespace NewSoufanWeatherStation.iOS
                 NameLabel = null;
             }
 
+            if (PressureSwitch != null) {
+                PressureSwitch.Dispose ();
+                PressureSwitch = null;
+            }
+
+            if (RainSwitch != null) {
+                RainSwitch.Dispose ();
+                RainSwitch = null;
+            }
+
             if (SerialNumberLabel != null) {
                 SerialNumberLabel.Dispose ();
                 SerialNumberLabel = null;
+            }
+
+            if (TempSwitch != null) {
+                TempSwitch.Dispose ();
+                TempSwitch = null;
+            }
+
+            if (WindSwitch != null) {
+                WindSwitch.Dispose ();
+                WindSwitch = null;
             }
         }
     }
