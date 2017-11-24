@@ -19,14 +19,13 @@ namespace NewSoufanWeatherStation.iOS
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
             //new DataBaseInitiatior();
-           
+            LoginButton.Layer.BorderColor = View.TintColor.CGColor;
+
+            LoginButton.Layer.BorderWidth = 2;
+            SignUpButton.Layer.BorderColor = View.TintColor.CGColor;
+            SignUpButton.Layer.BorderWidth = 2;
         }
 
-        public override void DidReceiveMemoryWarning()
-        {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.     
-        }
 
         partial void ClickSignUpButton(UIButton sender)
         {
@@ -36,6 +35,11 @@ namespace NewSoufanWeatherStation.iOS
         partial void ClickLoginButton(UIButton sender)
         {
             
+        }
+
+        private bool CheckAccountLoginInfo()
+        {
+            return true;
         }
     }
 }

@@ -14,6 +14,22 @@ namespace NewSoufanWeatherStation.iOS
     [Register ("LoginViewController")]
     partial class LoginViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton LoginButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField PasswordTextField { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton SignUpButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField UserNameTextField { get; set; }
+
         [Action ("ClickLoginButton:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void ClickLoginButton (UIKit.UIButton sender);
@@ -24,6 +40,25 @@ namespace NewSoufanWeatherStation.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (LoginButton != null) {
+                LoginButton.Dispose ();
+                LoginButton = null;
+            }
+
+            if (PasswordTextField != null) {
+                PasswordTextField.Dispose ();
+                PasswordTextField = null;
+            }
+
+            if (SignUpButton != null) {
+                SignUpButton.Dispose ();
+                SignUpButton = null;
+            }
+
+            if (UserNameTextField != null) {
+                UserNameTextField.Dispose ();
+                UserNameTextField = null;
+            }
         }
     }
 }

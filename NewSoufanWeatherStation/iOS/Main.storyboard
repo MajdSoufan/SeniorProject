@@ -37,7 +37,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11870">
-                                <rect key="frame" x="106" y="470" width="162" height="30"/>
+                                <rect key="frame" x="0.0" y="479" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,14 +48,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11875">
-                                <rect key="frame" x="164" y="441" width="46" height="30"/>
+                                <rect key="frame" x="0.0" y="441" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log in">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="ClickLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="11883"/>
-                                    <segue destination="28332" kind="push" id="28677"/>
+                                    <segue id="61800" destination="28332" kind="push"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -65,6 +65,12 @@
                         </accessibility>
                     </view>
                     <navigationItem key="navigationItem" title="Soufan Weather Station" id="18078"/>
+                    <connections>
+                        <outlet property="UserNameTextField" destination="11868" id="name-outlet-11868"/>
+                        <outlet property="PasswordTextField" destination="11869" id="name-outlet-11869"/>
+                        <outlet property="LoginButton" destination="11875" id="name-outlet-11875"/>
+                        <outlet property="SignUpButton" destination="11870" id="name-outlet-11870"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -192,8 +198,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4755" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="28913">
+                    <rect key="frame" x="512" y="954" width="375" height="44"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="28913" id="28914">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tableViewCellContentView>
+                </tableViewCell>
             </objects>
-            <point key="canvasLocation" x="327" y="712"/>
+            <point key="canvasLocation" x="420" y="861"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5103">
@@ -508,21 +522,12 @@
         <!--Stations-->
         <scene sceneID="28908">
             <objects>
-                <tableViewController title="Stations" id="28909" customClass="StationsTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Stations" id="28909" customClass="StationsTableViewController" sceneMemberID="viewController" storyboardIdentifier="StationsTableViewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="28910">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="28913">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="28913" id="28914">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <prototypes/>
                         <connections>
                             <outlet property="dataSource" destination="28909" id="28911"/>
                             <outlet property="delegate" destination="28909" id="28912"/>
@@ -538,7 +543,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28915" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="396" y="1441"/>
+            <point key="canvasLocation" x="308" y="2022"/>
         </scene>
         <!--Form 2-->
         <scene sceneID="37644">
@@ -658,24 +663,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="37756" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2178" y="1885"/>
-        </scene>
-        <scene sceneID="59155">
-            <objects>
-                <viewController id="59154" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="59150"/>
-                        <viewControllerLayoutGuide type="bottom" id="59151"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="59156">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="59157" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1432" y="100"/>
         </scene>
     </scenes>
     <resources>
