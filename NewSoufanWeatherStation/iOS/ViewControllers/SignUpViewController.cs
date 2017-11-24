@@ -42,8 +42,9 @@ namespace NewSoufanWeatherStation.iOS
                     Alert.Message = "User created successfully!!";
                     Alert.AddButton("Ok");
                     Alert.Show();
-                    ClearAllValidation();
+                    CreateNewUser();
 
+                    ClearAllValidation();
                 }
                 else
                 {
@@ -60,6 +61,11 @@ namespace NewSoufanWeatherStation.iOS
                 Alert.Show();
 
             }
+        }
+
+        private void CreateNewUser()
+        {
+            
         }
 
         private void ValidateEntries(UITextField textField)

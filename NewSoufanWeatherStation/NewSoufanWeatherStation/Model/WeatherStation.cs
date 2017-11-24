@@ -18,6 +18,8 @@ namespace NewSoufanWeatherStation.Model
 
         public WeatherStation()
         {
+            WeatherList = new List<WeatherData>();
+
             SetInitialWeatherData();
         }
 
@@ -32,7 +34,6 @@ namespace NewSoufanWeatherStation.Model
 
         private void SetInitialWeatherData()
         {
-            WeatherList = new List<WeatherData>();
             WeatherList.Add(new WeatherData
             {
                 Temparature = 82,
