@@ -9,16 +9,13 @@ namespace NewSoufanWeatherStation.iOS.ViewControllers
 
         public DataFormsTabController()
         {
-            Title = "Temp";
-
-
+            
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            NavigationItem.Title = "Temp";
-            Title = "Temp";
+            this.NavigationItem.Title = "Temp";
         }
 
        

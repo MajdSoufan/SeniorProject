@@ -625,7 +625,6 @@
                         <segue destination="37645" kind="relationship" relationship="viewControllers" id="37657"/>
                         <segue destination="37754" kind="relationship" relationship="viewControllers" id="37796"/>
                     </connections>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="37659" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

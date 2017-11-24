@@ -15,12 +15,12 @@ namespace NewSoufanWeatherStation.iOS
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
             //this.NavigationItem.SetRightBarButtonItem(
-               //new UIBarButtonItem(UIImage.FromFile("blue.png")
-               //, UIBarButtonItemStyle.Plain
-               //, (sender, args) => {
-               //     // button was clicked
-               // })
-               //, true);
+            //new UIBarButtonItem(UIImage.FromFile("blue.png")
+            //, UIBarButtonItemStyle.Plain
+            //, (sender, args) => {
+            //     // button was clicked
+            // })
+            //, true);
             this.NavigationItem.SetHidesBackButton(true, false);
         }
     }
