@@ -21,8 +21,15 @@ namespace NewSoufanWeatherStation.iOS
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
-
-
+            TabBarItem.Title = "Station Table";
+            this.NavigationItem.SetRightBarButtonItem(
+                new UIBarButtonItem(UIImage.FromFile("blue.png")
+                , UIBarButtonItemStyle.Plain
+                , (sender, args) => {
+                // button was clicked
+                })
+                , true);
+    
             StationsTable.Source = new StationsTableViewSource(this, StationsList);
         }
 

@@ -197,6 +197,10 @@
     </Compile>
     <Compile Include="Helper\FilterObject.cs" />
     <Compile Include="Helper\FilteredData.cs" />
+    <Compile Include="ViewControllers\AddStationViewController.cs" />
+    <Compile Include="ViewControllers\AddStationViewController.designer.cs">
+      <DependentUpon>AddStationViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="timessquare">
@@ -224,6 +228,7 @@
     <BundleResource Include="Resources\weather-wallpaper.jpg" />
     <BundleResource Include="Resources\weather-background.jpg" />
     <BundleResource Include="Resources\sea-background.jpg" />
+    <BundleResource Include="Resources\blue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
