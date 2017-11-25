@@ -19,11 +19,9 @@ namespace NewSoufanWeatherStation.iOS
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
             //new DataBaseInitiatior();
-            LoginButton.Layer.BorderColor = View.TintColor.CGColor;
+            LoginButton.Layer.BackgroundColor = View.TintColor.CGColor;
+            SignUpButton.Layer.BackgroundColor = View.TintColor.CGColor;
 
-            LoginButton.Layer.BorderWidth = 2;
-            SignUpButton.Layer.BorderColor = View.TintColor.CGColor;
-            SignUpButton.Layer.BorderWidth = 2;
         }
 
 
@@ -34,7 +32,8 @@ namespace NewSoufanWeatherStation.iOS
 
         partial void ClickLoginButton(UIButton sender)
         {
-            
+            Helper.DataCollector.GetData();
+
         }
 
         private bool CheckAccountLoginInfo()

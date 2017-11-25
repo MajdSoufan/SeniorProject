@@ -115,11 +115,44 @@
     <Reference Include="Alliance.Charts">
       <HintPath>..\Components\AllianceChart-2.0\lib\ios-unified\Alliance.Charts.dll</HintPath>
     </Reference>
-    <Reference Include="OxyPlot">
-      <HintPath>..\packages\OxyPlot.Core.2015.1.744-alpha\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10\OxyPlot.dll</HintPath>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="CreativeGurus.Messaging">
+      <HintPath>..\packages\CreativeGurus.Messaging.1.0.0.30\lib\netstandard1.6\CreativeGurus.Messaging.dll</HintPath>
     </Reference>
-    <Reference Include="OxyPlot.Xamarin.iOS">
-      <HintPath>..\packages\OxyPlot.Mobile.2015.1.744-alpha\lib\Xamarin.iOS10\OxyPlot.Xamarin.iOS.dll</HintPath>
+    <Reference Include="CreativeGurus.Common.Utilities.Json">
+      <HintPath>..\packages\CreativeGurus.Common.Utilities.Json.1.0.3\lib\netstandard1.3\CreativeGurus.Common.Utilities.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot">
+      <HintPath>..\packages\OxyPlot.Core.2015.1.1046-alpha\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>..\packages\System.Buffers.4.3.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.3.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.1.1.1\lib\netstandard1.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers">
+      <HintPath>..\packages\Microsoft.Net.Http.Headers.1.1.2\lib\netstandard1.1\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.3.1\lib\netstandard1.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebUtilities">
+      <HintPath>..\packages\Microsoft.AspNetCore.WebUtilities.1.1.2\lib\netstandard1.3\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="CreativeGurus.AzureNotificationHubClient">
+      <HintPath>..\packages\CreativeGurus.AzureNotificationHubClient.1.0.4\lib\netstandard1.6\CreativeGurus.AzureNotificationHubClient.dll</HintPath>
+    </Reference>
+    <Reference Include="CreativeGurus.Weather.Wunderground">
+      <HintPath>..\packages\WUnderground.Net.2.0.6\lib\netstandard1.1\CreativeGurus.Weather.Wunderground.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -191,16 +224,17 @@
     <Compile Include="ViewControllers\DataForm3Controller.designer.cs">
       <DependentUpon>DataForm3Controller.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\DataFormsTabController.cs" />
-    <Compile Include="ViewControllers\DataFormsTabController.designer.cs">
-      <DependentUpon>DataFormsTabController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helper\FilterObject.cs" />
     <Compile Include="Helper\FilteredData.cs" />
     <Compile Include="ViewControllers\AddStationViewController.cs" />
     <Compile Include="ViewControllers\AddStationViewController.designer.cs">
       <DependentUpon>AddStationViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControllers\DataTabController.cs" />
+    <Compile Include="ViewControllers\DataTabController.designer.cs">
+      <DependentUpon>DataTabController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\DataCollector.cs" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="timessquare">
@@ -231,4 +265,5 @@
     <BundleResource Include="Resources\blue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
 </Project>

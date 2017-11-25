@@ -11,11 +11,8 @@ using UIKit;
 
 namespace NewSoufanWeatherStation.iOS
 {
-    [Register ("DataFormsTabController")]
-    partial class DataFormsTabController
+    [Register ("DataTabController")]
+    partial class DataTabController
     {
-        void ReleaseDesignerOutlets ()
-        {
-        }
     }
 }
