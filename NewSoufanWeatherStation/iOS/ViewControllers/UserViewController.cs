@@ -17,6 +17,7 @@ namespace NewSoufanWeatherStation.iOS
 			base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
             this.NavigationItem.SetHidesBackButton(true, false);
+            TextFieldsReturn();
 		}
 
         partial void EditButton_TouchUpInside(UIButton sender)
@@ -101,6 +102,34 @@ namespace NewSoufanWeatherStation.iOS
 
         }
 
+        private void TextFieldsReturn()
+        {
+            this.FirstNameTextField.ShouldReturn += (textField) =>
+            {
+                textField.ResignFirstResponder();
+                return true;
+            };
+            this.LastNameTextField.ShouldReturn += (textField) =>
+            {
+                textField.ResignFirstResponder();
+                return true;
+            };
+            this.EmailTextField.ShouldReturn += (textField) =>
+            {
+                textField.ResignFirstResponder();
+                return true;
+            };
+            this.PasswordTextField.ShouldReturn += (textField) =>
+            {
+                textField.ResignFirstResponder();
+                return true;
+            };
+            this.PasswordConfTextField.ShouldReturn += (textField) =>
+            {
+                textField.ResignFirstResponder();
+                return true;
+            };
+        }
       
     }
 }

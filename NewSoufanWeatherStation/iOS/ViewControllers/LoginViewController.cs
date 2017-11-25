@@ -21,7 +21,14 @@ namespace NewSoufanWeatherStation.iOS
             //new DataBaseInitiatior();
             LoginButton.Layer.BackgroundColor = View.TintColor.CGColor;
             SignUpButton.Layer.BackgroundColor = View.TintColor.CGColor;
-
+            //this.UserNameTextField.ShouldReturn += (textField) => {
+            //    textField.ResignFirstResponder();
+            //    return true;
+            //};
+            this.PasswordTextField.ShouldReturn += (textField) => {
+                textField.ResignFirstResponder();
+                return true;
+            };
         }
 
 

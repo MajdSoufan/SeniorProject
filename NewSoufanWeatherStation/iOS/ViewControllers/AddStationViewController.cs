@@ -12,6 +12,13 @@ namespace NewSoufanWeatherStation.iOS
         {
         }
 
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            TextFieldsReturn();
+
+        }
+
 
         partial void SubmitButton_TouchUpInside(UIButton sender)
         {
@@ -27,6 +34,26 @@ namespace NewSoufanWeatherStation.iOS
                 Alert.AddButton("Ok");
                 Alert.Show();
             }
+
+        }
+
+        private void TextFieldsReturn()
+        {
+            this.NameTextField.ShouldReturn += (textField) =>
+            {
+                textField.ResignFirstResponder();
+                return true;
+            };
+            this.MacAddTextField.ShouldReturn += (textField) =>
+            {
+                textField.ResignFirstResponder();
+                return true;
+            };
+            this.SerialNumTextField.ShouldReturn += (textField) =>
+            {
+                textField.ResignFirstResponder();
+                return true;
+            };
 
         }
     }

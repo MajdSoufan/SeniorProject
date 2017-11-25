@@ -17,7 +17,7 @@ namespace NewSoufanWeatherStation.iOS
 		{
 			base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
-
+            TextFieldsReturn();
 		}
 
 		public override void DidReceiveMemoryWarning()
@@ -114,6 +114,35 @@ namespace NewSoufanWeatherStation.iOS
         private bool PasswordConfirmation()
         {
             return PasswordField.Text.Equals(PasswordConfField.Text);
+        }
+
+        private void TextFieldsReturn()
+        {
+            this.FirstNameField.ShouldReturn += (textField) =>
+            {
+                textField.ResignFirstResponder();
+                return true;
+            };
+            this.LastNameField.ShouldReturn += (textField) =>
+            {
+                textField.ResignFirstResponder();
+                return true;
+            };
+            this.EmailField.ShouldReturn += (textField) =>
+            {
+                textField.ResignFirstResponder();
+                return true;
+            };
+            this.PasswordField.ShouldReturn += (textField) =>
+            {
+                textField.ResignFirstResponder();
+                return true;
+            };
+            this.PasswordConfField.ShouldReturn += (textField) =>
+            {
+                textField.ResignFirstResponder();
+                return true;
+            };
         }
     }
 }
