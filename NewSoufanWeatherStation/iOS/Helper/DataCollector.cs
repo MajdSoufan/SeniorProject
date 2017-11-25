@@ -74,7 +74,9 @@ namespace NewSoufanWeatherStation.iOS.Helper
                 //var h1 = client.GetHourly(QueryType.USCity, new QueryOptions() { City = "Dallas", State = "TX" });
 
                 //Sample Conditions
-                //var c1 = await client.GetConditionsAsync(QueryType.USCity, new QueryOptions() { City = "Dallas", State = "TX" });
+                var history = await client.GetHistoryAsync(QueryType.USCity, new QueryOptions() { City = "Dallas", State = "TX", Date = DateTime.Now.AddDays(-20), });
+
+               // var c1 = await client.GetConditionsAsync( QueryType.USCity, new QueryOptions{ State="CA", City="San Francisco", Date = new DateTime(2017, 11, 23) });
 
                 //await client.GetAlertsAsync(QueryType.USCity, new QueryOptions() { City = "Las Angeles", State = "CA" });
 
@@ -87,12 +89,12 @@ namespace NewSoufanWeatherStation.iOS.Helper
                 //var f10day = await client.GetForecast10DayAsync(QueryType.USCity, new QueryOptions() { City = "Dallas", State = "TX" });
 
                 //Sample History
-                var history = await client.GetHistoryAsync(QueryType.PWSId, new QueryOptions {  PWSId = "KINEVANS70", Date = new DateTime(2017, 11, 23)});
+              //  var history = await client.GetHistoryAsync(QueryType.PWSId, new QueryOptions {  PWSId = "KINEVANS70", Date = new DateTime(2017, 11, 23)});
 
-                var s = history.History.Observations[0].Tempi;
+              //  var s = history.History.Observations[0].Tempi;
 
                 var Alert = new UIAlertView();
-                Alert.Message = "User created successfully!!" + s;
+                Alert.Message = "User created successfully!!" ;
                 Alert.AddButton("Ok");
                 Alert.Show();
                 return true;
