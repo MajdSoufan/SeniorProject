@@ -494,12 +494,38 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="60631" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                        <rect key="frame" x="29" y="285" width="88" height="29"/>
+                                        <rect key="frame" x="29" y="295" width="88" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="68593" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                        <rect key="frame" x="119" y="236" width="242" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="332704801.65417802">
+                                            <!--2011-07-18 18:00:01 +0000-->
+                                        </date>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="533127600">
+                                            <!--Thu, 23 Nov 2017 11:00:00 GMT-->
+                                        </date>
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="533300400">
+                                            <!--Sat, 25 Nov 2017 11:00:00 GMT-->
+                                        </date>
+                                    </datePicker>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="69338" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                        <rect key="frame" x="119" y="288" width="242" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="332704801.65417802">
+                                            <!--2011-07-18 18:00:01 +0000-->
+                                        </date>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="533127600">
+                                            <!--Thu, 23 Nov 2017 11:00:00 GMT-->
+                                        </date>
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="533300400">
+                                            <!--Sat, 25 Nov 2017 11:00:00 GMT-->
+                                        </date>
+                                    </datePicker>
                                 </subviews>
                             </view>
                         </subviews>
@@ -515,6 +541,8 @@
                         <outlet property="RainSwitch" destination="59194" id="name-outlet-59194"/>
                         <outlet property="WindSwitch" destination="60348" id="name-outlet-60348"/>
                         <outlet property="HumiditySwitch" destination="60351" id="name-outlet-60351"/>
+                        <outlet property="StartDatePicker" destination="68593" id="name-outlet-68593"/>
+                        <outlet property="EndDatePicker" destination="69338" id="name-outlet-69338"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10487" userLabel="First Responder" sceneMemberID="firstResponder"/>

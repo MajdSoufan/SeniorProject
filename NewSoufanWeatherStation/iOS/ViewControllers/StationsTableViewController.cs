@@ -36,9 +36,9 @@ namespace NewSoufanWeatherStation.iOS
         private void ConstructWeatherStations()
         {
             StationsList.Add(new Model.WeatherStation("011232342423", "110.22.13.11", "Backyard Station"));
-            StationsList.Add(new Model.WeatherStation("019488238423", "113.12.73.12", "Frontyard Station"));
-            StationsList.Add(new Model.WeatherStation("019090807014", "144.25.63.13", "Porch Station"));
-            StationsList.Add(new Model.WeatherStation("011209887766", "155.52.23.14", "Barn Station"));
+            //StationsList.Add(new Model.WeatherStation("019488238423", "113.12.73.12", "Frontyard Station"));
+            //StationsList.Add(new Model.WeatherStation("019090807014", "144.25.63.13", "Porch Station"));
+            //StationsList.Add(new Model.WeatherStation("011209887766", "155.52.23.14", "Barn Station"));
 
         }
     }

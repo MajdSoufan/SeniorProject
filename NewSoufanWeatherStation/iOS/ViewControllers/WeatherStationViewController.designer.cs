@@ -16,6 +16,10 @@ namespace NewSoufanWeatherStation.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIDatePicker EndDatePicker { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel FilterLabel { get; set; }
 
         [Outlet]
@@ -44,6 +48,10 @@ namespace NewSoufanWeatherStation.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIDatePicker StartDatePicker { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISwitch TempSwitch { get; set; }
 
         [Outlet]
@@ -56,6 +64,11 @@ namespace NewSoufanWeatherStation.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (EndDatePicker != null) {
+                EndDatePicker.Dispose ();
+                EndDatePicker = null;
+            }
+
             if (FilterLabel != null) {
                 FilterLabel.Dispose ();
                 FilterLabel = null;
@@ -89,6 +102,11 @@ namespace NewSoufanWeatherStation.iOS
             if (SerialNumberLabel != null) {
                 SerialNumberLabel.Dispose ();
                 SerialNumberLabel = null;
+            }
+
+            if (StartDatePicker != null) {
+                StartDatePicker.Dispose ();
+                StartDatePicker = null;
             }
 
             if (TempSwitch != null) {

@@ -43,7 +43,6 @@ namespace NewSoufanWeatherStation.iOS
 
         partial void  ClickLoginButton(UIButton sender)
         {
-             Helper.DataCollector.GetData();
 
         }
 

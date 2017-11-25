@@ -78,6 +78,8 @@ namespace NewSoufanWeatherStation.iOS
             DataForm2Controller.FilteredObject = fileteredDataObject;
             DataForm3Controller.FilteredObject = fileteredDataObject;
 
+            Helper.DataCollector.GetData();
+
         }
 
         private void AddSwitches()
