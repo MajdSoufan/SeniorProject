@@ -3,6 +3,8 @@ using System;
 using System.IO;
 using SQLite;
 using UIKit;
+using System.Threading.Tasks;
+using System.Runtime;
 
 namespace NewSoufanWeatherStation.iOS
 {
@@ -21,14 +23,16 @@ namespace NewSoufanWeatherStation.iOS
             //new DataBaseInitiatior();
             LoginButton.Layer.BackgroundColor = View.TintColor.CGColor;
             SignUpButton.Layer.BackgroundColor = View.TintColor.CGColor;
-            //this.UserNameTextField.ShouldReturn += (textField) => {
-            //    textField.ResignFirstResponder();
-            //    return true;
-            //};
+            this.UserNameTextField.ShouldReturn += (textField) => {
+                textField.ResignFirstResponder();
+                return true;
+            };
             this.PasswordTextField.ShouldReturn += (textField) => {
                 textField.ResignFirstResponder();
                 return true;
             };
+
+
         }
 
 
@@ -37,9 +41,9 @@ namespace NewSoufanWeatherStation.iOS
 
         }
 
-        partial void ClickLoginButton(UIButton sender)
+        partial void  ClickLoginButton(UIButton sender)
         {
-            Helper.DataCollector.GetData();
+             Helper.DataCollector.GetData();
 
         }
 
