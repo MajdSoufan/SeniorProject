@@ -377,7 +377,6 @@
                                 </state>
                                 <connections>
                                     <action selector="WeatherInfoButton_TouchUpInside:" destination="10485" eventType="touchUpInside" id="43792"/>
-                                    <segue id="44359" destination="37655" kind="push"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Serial Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37600">
@@ -663,7 +662,7 @@
         <!--Data Forms Tab Controller-->
         <scene sceneID="37654">
             <objects>
-                <tabBarController id="37655" sceneMemberID="viewController" customClass="DataTabController" title="Data Forms">
+                <tabBarController id="37655" sceneMemberID="viewController" customClass="DataTabController" title="Data Forms" storyboardIdentifier="DataTabController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="37658">
                         <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

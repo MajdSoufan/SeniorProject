@@ -63,17 +63,26 @@ namespace NewSoufanWeatherStation.iOS
                 //Alert.AddButton("Ok");
                 //Alert.Show();
 
-                DataForm1Controller dataForm1TabController = this.Storyboard.InstantiateViewController
-                        ("DataForm1Controller") as DataForm1Controller;
-                if (dataForm1TabController != null)
+                //DataForm1Controller dataForm1TabController = this.Storyboard.InstantiateViewController
+                //        ("DataForm1Controller") as DataForm1Controller;
+                //if (dataForm1TabController != null)
+                //{
+                //    //dataForm1TabController.WeatherStation = this.WeatherStation;
+                //    DataForm1Controller.WeatherStation = this.WeatherStation;
+
+                //    this.NavigationController.PushViewController(dataForm1TabController, true);
+
+                //}
+                DataTabController dataTabController = this.Storyboard.InstantiateViewController
+                                                               ("DataTabController") as DataTabController;
+                if (dataTabController != null)
                 {
                     //dataForm1TabController.WeatherStation = this.WeatherStation;
                     DataForm1Controller.WeatherStation = this.WeatherStation;
 
-                    this.NavigationController.PushViewController(dataForm1TabController, true);
+                    this.NavigationController.PushViewController(dataTabController, true);
 
                 }
-
 
                 DataForm1Controller.WeatherStation = this.WeatherStation;
                 DataForm2Controller.WeatherStation = this.WeatherStation;
