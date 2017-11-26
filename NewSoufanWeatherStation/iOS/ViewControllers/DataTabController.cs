@@ -17,5 +17,6 @@ namespace NewSoufanWeatherStation.iOS
 
             NavigationItem.Title = DataForm1Controller.FilteredObject.Data.ToString();
         }
+
     }
 }

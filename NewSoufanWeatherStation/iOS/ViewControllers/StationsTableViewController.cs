@@ -9,6 +9,8 @@ namespace NewSoufanWeatherStation.iOS
     public partial class StationsTableViewController : UITableViewController
     {
         public List<Model.WeatherStation> StationsList { get; set; }
+        private UIBarButtonItem AddButton = new UIBarButtonItem();
+
 
         public StationsTableViewController (IntPtr handle) : base (handle)
         {
@@ -21,15 +23,24 @@ namespace NewSoufanWeatherStation.iOS
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
-            this.NavigationItem.SetRightBarButtonItem(
-                new UIBarButtonItem(UIImage.FromFile("blue.png")
-                , UIBarButtonItemStyle.Plain
-                , (sender, args) => {
-                // button was clicked
-                })
+            AddButton.Title = "Add";
+
+            this.TabBarController.NavigationItem.SetRightBarButtonItem(AddButton
                 , true);
     
             StationsTable.Source = new StationsTableViewSource(this, StationsList);
+
+            this.TabBarController.NavigationItem.Title = "Stations";
+        }
+
+        public override void ViewDidAppear(bool animated)
+        {
+            AddButton.Title = "Add";
+
+            this.TabBarController.NavigationItem.SetRightBarButtonItem(AddButton
+                , true);
+
+            this.TabBarController.NavigationItem.Title = "Stations";
         }
 
         private void ConstructWeatherStations()

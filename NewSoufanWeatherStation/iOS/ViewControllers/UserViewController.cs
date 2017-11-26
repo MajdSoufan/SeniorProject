@@ -17,8 +17,18 @@ namespace NewSoufanWeatherStation.iOS
 			base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
             this.NavigationItem.SetHidesBackButton(true, false);
+            this.TabBarController.NavigationItem.Title = "User View";
+            this.TabBarController.NavigationItem.SetRightBarButtonItem(null, true);
             TextFieldsReturn();
+           // base.ViewDidAppear();
 		}
+
+        public override void ViewDidAppear(bool animate)
+        {
+            this.TabBarController.NavigationItem.Title = "User View";
+            this.TabBarController.NavigationItem.SetRightBarButtonItem(null, true);
+
+        }
 
         partial void EditButton_TouchUpInside(UIButton sender)
         {

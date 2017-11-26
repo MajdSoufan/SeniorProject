@@ -14,8 +14,16 @@ namespace NewSoufanWeatherStation.iOS
     [Register ("UserTabViewController")]
     partial class UserTabViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITabBar UserTabBar { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (UserTabBar != null) {
+                UserTabBar.Dispose ();
+                UserTabBar = null;
+            }
         }
     }
 }

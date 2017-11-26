@@ -561,6 +561,7 @@
                     <connections>
                         <segue destination="4753" kind="relationship" relationship="viewControllers" id="28607"/>
                         <segue destination="28909" kind="relationship" relationship="viewControllers" id="29043"/>
+                        <outlet property="UserTabBar" destination="28335" id="name-outlet-28335"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28336" userLabel="First Responder" sceneMemberID="firstResponder"/>

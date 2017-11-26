@@ -22,6 +22,10 @@ namespace NewSoufanWeatherStation.iOS
             // })
             //, true);
             this.NavigationItem.SetHidesBackButton(true, false);
+
+            //UserTabBar.ItemSelected += (sender, e) => { NavigationItem.Title = "wda"; };
         }
+
+
     }
 }
