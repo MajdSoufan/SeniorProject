@@ -53,32 +53,54 @@ namespace NewSoufanWeatherStation.iOS
         partial void WeatherInfoButton_TouchUpInside(UIButton sender)
         {
 
-            //DataForm1Controller dataForm1TabController = this.Storyboard.InstantiateViewController
-            //            ("DataForm1Controller") as DataForm1Controller;
-            //if (dataForm1TabController != null)
-            //{
-            //    //dataForm1TabController.WeatherStation = this.WeatherStation;
-            //    DataForm1Controller.WeatherStation = this.WeatherStation;
 
-            //    this.NavigationController.PushViewController(dataForm1TabController, true);
 
-            //}
-            DataForm1Controller.WeatherStation = this.WeatherStation;
-            DataForm2Controller.WeatherStation = this.WeatherStation;
-            DataForm3Controller.WeatherStation = this.WeatherStation;
-
-            Helper.FilterObject fileteredDataObject = new Helper.FilterObject
+            var Alert = new UIAlertView();
+            if ((StartDatePicker.Date.IsEqualToDate(EndDatePicker.Date))||
+                (StartDatePicker.Date.IsEqualToDate(StartDatePicker.Date.EarlierDate(EndDatePicker.Date))))
             {
-                Data = GetDataChosen(),
-                StartDate = WeatherStation.WeatherList.First().Date,
-                EndDate = WeatherStation.WeatherList.Last().Date
-            };
+                //Alert.Message = "User created successfully!! " + StartDatePicker.Date.LaterDate(EndDatePicker.Date).ToString();
+                //Alert.AddButton("Ok");
+                //Alert.Show();
 
-            DataForm1Controller.FilteredObject = fileteredDataObject;
-            DataForm2Controller.FilteredObject = fileteredDataObject;
-            DataForm3Controller.FilteredObject = fileteredDataObject;
+                DataForm1Controller dataForm1TabController = this.Storyboard.InstantiateViewController
+                        ("DataForm1Controller") as DataForm1Controller;
+                if (dataForm1TabController != null)
+                {
+                    //dataForm1TabController.WeatherStation = this.WeatherStation;
+                    DataForm1Controller.WeatherStation = this.WeatherStation;
 
-            Helper.DataCollector.GetData();
+                    this.NavigationController.PushViewController(dataForm1TabController, true);
+
+                }
+
+
+                DataForm1Controller.WeatherStation = this.WeatherStation;
+                DataForm2Controller.WeatherStation = this.WeatherStation;
+                DataForm3Controller.WeatherStation = this.WeatherStation;
+
+                Helper.FilterObject fileteredDataObject = new Helper.FilterObject
+                {
+                    Data = GetDataChosen(),
+                    StartDate = WeatherStation.WeatherList.First().Date,
+                    EndDate = WeatherStation.WeatherList.Last().Date
+                };
+
+                DataForm1Controller.FilteredObject = fileteredDataObject;
+                DataForm2Controller.FilteredObject = fileteredDataObject;
+                DataForm3Controller.FilteredObject = fileteredDataObject;
+
+                Helper.DataCollector.GetData();
+            }
+            else
+            {
+                Alert.Message = "Start Date is later than End Date!" ;
+                Alert.AddButton("Ok");
+                Alert.Show();
+            }
+
+
+
 
         }
 

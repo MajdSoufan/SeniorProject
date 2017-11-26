@@ -500,11 +500,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="68593" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="68593" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" useCurrentDate="NO">
                                         <rect key="frame" x="119" y="236" width="242" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="332704801.65417802">
-                                            <!--2011-07-18 18:00:01 +0000-->
+                                        <date key="date" timeIntervalSinceReferenceDate="533149222.117005">
+                                            <!--Thu, 23 Nov 2017 17:00:22 GMT-->
                                         </date>
                                         <date key="minimumDate" timeIntervalSinceReferenceDate="533127600">
                                             <!--Thu, 23 Nov 2017 11:00:00 GMT-->
@@ -544,6 +544,7 @@
                         <outlet property="StartDatePicker" destination="68593" id="name-outlet-68593"/>
                         <outlet property="EndDatePicker" destination="69338" id="name-outlet-69338"/>
                     </connections>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10487" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
