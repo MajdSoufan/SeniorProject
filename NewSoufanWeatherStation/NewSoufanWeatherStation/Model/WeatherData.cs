@@ -19,6 +19,15 @@ namespace NewSoufanWeatherStation.Model
         {
         }
 
+        public WeatherData(float temp, float rain, float wind, float hum, DateTime date)
+        {
+            Temparature = temp;
+            WindSpeed = wind;
+            RainAmount = rain;
+            Humidity = hum;
+            Date = date;
+        }
+
         public string PrintDate()
         {
             string year = Date.Year.ToString().Substring(2);

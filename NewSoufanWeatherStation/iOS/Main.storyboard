@@ -508,8 +508,8 @@
                                         <date key="minimumDate" timeIntervalSinceReferenceDate="533127600">
                                             <!--Thu, 23 Nov 2017 11:00:00 GMT-->
                                         </date>
-                                        <date key="maximumDate" timeIntervalSinceReferenceDate="533300400">
-                                            <!--Sat, 25 Nov 2017 11:00:00 GMT-->
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="533386800">
+                                            <!--Sun, 26 Nov 2017 11:00:00 GMT-->
                                         </date>
                                     </datePicker>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="69338" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -521,8 +521,8 @@
                                         <date key="minimumDate" timeIntervalSinceReferenceDate="533127600">
                                             <!--Thu, 23 Nov 2017 11:00:00 GMT-->
                                         </date>
-                                        <date key="maximumDate" timeIntervalSinceReferenceDate="533300400">
-                                            <!--Sat, 25 Nov 2017 11:00:00 GMT-->
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="533386800">
+                                            <!--Sun, 26 Nov 2017 11:00:00 GMT-->
                                         </date>
                                     </datePicker>
                                 </subviews>

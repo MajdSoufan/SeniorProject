@@ -13,6 +13,8 @@ namespace NewSoufanWeatherStation.iOS
         public Model.WeatherStation WeatherStation;
         private List<UISwitch> SwitchesList;
 
+        private const double SECONDS_IN_DAY = 86399;
+
         public WeatherStationViewController (IntPtr handle) : base (handle)
         {
         }
@@ -64,8 +66,24 @@ namespace NewSoufanWeatherStation.iOS
                 (StartDatePicker.Date.IsEqualToDate(StartDatePicker.Date.EarlierDate(EndDatePicker.Date))))
             {
 
-                Model.WeatherData we = await Helper.DataCollector.GetData(this.WeatherStation.WeatherList[0]);
-                Alert.Message = "Data: " + we.Temparature.ToString() + " WW";
+                List<Model.WeatherData> dataList = new List<Model.WeatherData>();
+
+                DateTime day = ((DateTime)StartDatePicker.Date).ToLocalTime();
+
+                NSDate lastDay = EndDatePicker.Date.AddSeconds(500);
+
+
+                for (var date = StartDatePicker.Date; !date.IsEqualToDate(lastDay.LaterDate(date)); date = date.AddSeconds(SECONDS_IN_DAY))
+                {
+                    var data = await Helper.DataCollector.GetData(((DateTime)date).ToLocalTime());
+                    dataList.Add(data);
+                }
+                //Model.WeatherData weatherData = await Helper.DataCollector.GetData();
+
+
+                this.WeatherStation.WeatherList = dataList;
+
+                Alert.Message = "Data: " + StartDatePicker.Date.AddSeconds(SECONDS_IN_DAY).ToString() + " WW";
                 Alert.AddButton("Ok");
                 Alert.Show();
                 //Alert.Message = "User created successfully!! " + StartDatePicker.Date.LaterDate(EndDatePicker.Date).ToString();
