@@ -4,6 +4,7 @@ using UIKit;
 using System.Collections.Generic;
 using System.Linq;
 using BarChart;
+using System.Threading.Tasks;
 
 namespace NewSoufanWeatherStation.iOS
 {
@@ -50,15 +51,23 @@ namespace NewSoufanWeatherStation.iOS
         }
 
 
-        partial void WeatherInfoButton_TouchUpInside(UIButton sender)
+        async partial void WeatherInfoButton_TouchUpInside(UIButton sender)
+        {
+            await GetWeatherInfo();
+        }
+
+        private async Task GetWeatherInfo()
         {
 
-
-
             var Alert = new UIAlertView();
-            if ((StartDatePicker.Date.IsEqualToDate(EndDatePicker.Date))||
+            if ((StartDatePicker.Date.IsEqualToDate(EndDatePicker.Date)) ||
                 (StartDatePicker.Date.IsEqualToDate(StartDatePicker.Date.EarlierDate(EndDatePicker.Date))))
             {
+
+                Model.WeatherData we = await Helper.DataCollector.GetData(this.WeatherStation.WeatherList[0]);
+                Alert.Message = "Data: " + we.Temparature.ToString() + " WW";
+                Alert.AddButton("Ok");
+                Alert.Show();
                 //Alert.Message = "User created successfully!! " + StartDatePicker.Date.LaterDate(EndDatePicker.Date).ToString();
                 //Alert.AddButton("Ok");
                 //Alert.Show();
@@ -99,17 +108,14 @@ namespace NewSoufanWeatherStation.iOS
                 DataForm2Controller.FilteredObject = fileteredDataObject;
                 DataForm3Controller.FilteredObject = fileteredDataObject;
 
-                Helper.DataCollector.GetData();
+               
             }
             else
             {
-                Alert.Message = "Start Date is later than End Date!" ;
+                Alert.Message = "Start Date is later than End Date!";
                 Alert.AddButton("Ok");
                 Alert.Show();
             }
-
-
-
 
         }
 
