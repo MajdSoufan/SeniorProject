@@ -26,6 +26,8 @@ namespace NewSoufanWeatherStation.iOS
         {   
             base.ViewDidLoad();
 
+
+
             NavigationItem.Title = FilteredObject.Data.ToString();
 
             this.TheAllianceChart = new AllianceChart(Chart.Line, this.SubView);      

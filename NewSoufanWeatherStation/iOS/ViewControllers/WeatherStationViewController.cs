@@ -65,14 +65,18 @@ namespace NewSoufanWeatherStation.iOS
         {
 
             var Alert = new UIAlertView();
-   
-            if ((StartDatePicker.Date.IsEqualToDate(EndDatePicker.Date)) ||
-                (StartDatePicker.Date.IsEqualToDate(StartDatePicker.Date.EarlierDate(EndDatePicker.Date))))
+
+            DateTime startDay = ((DateTime)StartDatePicker.Date).ToLocalTime().Date;
+            DateTime endDay = ((DateTime)EndDatePicker.Date).ToLocalTime().Date;
+
+
+            //if ((StartDatePicker.Date.IsEqualToDate(EndDatePicker.Date)) ||
+            //(StartDatePicker.Date.IsEqualToDate(StartDatePicker.Date.EarlierDate(EndDatePicker.Date))))
+            if ((DateTime.Compare(startDay,endDay) == 0)||(DateTime.Compare(startDay, endDay) < 0))
             {
 
                 List<Model.WeatherData> dataList = new List<Model.WeatherData>();
 
-                DateTime day = ((DateTime)StartDatePicker.Date).ToLocalTime();
 
                 NSDate lastDay = EndDatePicker.Date;
                 var bounds = UIScreen.MainScreen.Bounds;
@@ -80,18 +84,34 @@ namespace NewSoufanWeatherStation.iOS
 
 
 
-                for (var date = StartDatePicker.Date; !date.IsEqualToDate(lastDay.LaterDate(date)); date = date.AddSeconds(SECONDS_IN_DAY))
+                //for (var date = StartDatePicker.Date; !date.IsEqualToDate(lastDay.LaterDate(date)); date = date.AddSeconds(SECONDS_IN_DAY))
+                //{
+                //    if (date.IsEqualToDate(StartDatePicker.Date))
+                //    {
+                //        // show the loading overlay on the UI thread using the correct orientation sizing
+                //        loadPop = new LoadingOverlay(bounds); // using field from step 2
+                //        View.Add(loadPop);
+                //    }
+                    
+                //    var data = await Helper.DataCollector.GetData(((DateTime)date).ToLocalTime());
+                //    dataList.Add(data);
+                //}
+
+                for (var date = startDay; DateTime.Compare(date,endDay) <= 0; date = date.AddDays(1))
                 {
-                    if (date.IsEqualToDate(StartDatePicker.Date))
+                    if (DateTime.Compare(date, startDay) == 0)
                     {
                         // show the loading overlay on the UI thread using the correct orientation sizing
                         loadPop = new LoadingOverlay(bounds); // using field from step 2
                         View.Add(loadPop);
                     }
-                    
-                    var data = await Helper.DataCollector.GetData(((DateTime)date).ToLocalTime());
+
+                    var data = await Helper.DataCollector.GetData(date);
                     dataList.Add(data);
                 }
+
+
+
                 //Model.WeatherData weatherData = await Helper.DataCollector.GetData();
                 loadPop.Hide();
 
