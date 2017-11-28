@@ -139,7 +139,7 @@ namespace NewSoufanWeatherStation.iOS
         private void AddSwitches()
         {
             SwitchesList.Add(TempSwitch);
-            SwitchesList.Add(RainSwitch);
+            SwitchesList.Add(PressureSwitch);
             SwitchesList.Add(WindSwitch);
             SwitchesList.Add(HumiditySwitch);
         }
@@ -182,9 +182,9 @@ namespace NewSoufanWeatherStation.iOS
             {
                 return Helper.FilteredData.Temp;
             }
-            else if (eSwitch.Equals(RainSwitch))
+            else if (eSwitch.Equals(PressureSwitch))
             {
-                return Helper.FilteredData.Rain;
+                return Helper.FilteredData.Pressure;
             }
             else if (eSwitch.Equals(WindSwitch))
             {

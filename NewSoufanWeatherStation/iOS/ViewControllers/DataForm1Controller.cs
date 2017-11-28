@@ -79,9 +79,9 @@ namespace NewSoufanWeatherStation.iOS
             {
                 return weatherData.Temparature;
             }
-            else if (FilteredObject.Data.Equals(Helper.FilteredData.Rain))
+            else if (FilteredObject.Data.Equals(Helper.FilteredData.Pressure))
             {
-                return weatherData.RainAmount;
+                return weatherData.Pressure;
             }
             else if (FilteredObject.Data.Equals(Helper.FilteredData.Wind))
             {

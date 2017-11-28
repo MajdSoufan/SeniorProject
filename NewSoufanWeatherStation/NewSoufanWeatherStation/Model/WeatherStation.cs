@@ -18,7 +18,6 @@ namespace NewSoufanWeatherStation.Model
 
         public WeatherStation()
         {
-
             SetInitialWeatherData();
         }
 
@@ -38,7 +37,7 @@ namespace NewSoufanWeatherStation.Model
             WeatherList.Add(new WeatherData
             {
                 Temparature = 82,
-                RainAmount = 15,
+                Pressure = 15,
                 WindSpeed = 70,
                 Humidity = 60,
                 Date = new DateTime(2017, 10, 1)
@@ -46,7 +45,7 @@ namespace NewSoufanWeatherStation.Model
             WeatherList.Add(new WeatherData
             {
                 Temparature = 92,
-                RainAmount = 12,
+                Pressure = 12,
                 WindSpeed = 20,
                 Humidity = 70,
                 Date = new DateTime(2017, 10, 2)
@@ -54,7 +53,7 @@ namespace NewSoufanWeatherStation.Model
             WeatherList.Add(new WeatherData
             {
                 Temparature = 90,
-                RainAmount = 7,
+                Pressure = 7,
                 WindSpeed = 45,
                 Humidity = 50,
                 Date = new DateTime(2017, 10, 3)
@@ -62,7 +61,7 @@ namespace NewSoufanWeatherStation.Model
             WeatherList.Add(new WeatherData
             {
                 Temparature = 80,
-                RainAmount = 20,
+                Pressure = 20,
                 WindSpeed = 89,
                 Humidity = 40,
                 Date = new DateTime(2017, 10, 4)
@@ -70,7 +69,7 @@ namespace NewSoufanWeatherStation.Model
             WeatherList.Add(new WeatherData
             {
                 Temparature = 95,
-                RainAmount =17,
+                Pressure =17,
                 WindSpeed = 66,
                 Humidity = 85,
                 Date = new DateTime(2017, 10, 5)

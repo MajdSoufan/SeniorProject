@@ -464,7 +464,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rain Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="60423" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pressure:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="60423" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                         <rect key="frame" x="29" y="100" width="104" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -537,7 +537,7 @@
                         <outlet property="FilterView" destination="59159" id="name-outlet-59159"/>
                         <outlet property="FilterLabel" destination="59195" id="name-outlet-59195"/>
                         <outlet property="TempSwitch" destination="60353" id="name-outlet-60353"/>
-                        <outlet property="RainSwitch" destination="59194" id="name-outlet-59194"/>
+                        <outlet property="PressureSwitch" destination="59194" id="name-outlet-59194"/>
                         <outlet property="WindSwitch" destination="60348" id="name-outlet-60348"/>
                         <outlet property="HumiditySwitch" destination="60351" id="name-outlet-60351"/>
                         <outlet property="StartDatePicker" destination="68593" id="name-outlet-68593"/>

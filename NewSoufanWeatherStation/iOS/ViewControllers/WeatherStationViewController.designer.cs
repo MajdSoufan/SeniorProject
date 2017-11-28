@@ -7,8 +7,8 @@
 using Foundation;
 using System;
 using System.CodeDom.Compiler;
-using UIKit;
 using System.Threading.Tasks;
+using UIKit;
 
 namespace NewSoufanWeatherStation.iOS
 {
@@ -41,7 +41,7 @@ namespace NewSoufanWeatherStation.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UISwitch RainSwitch { get; set; }
+        UIKit.UISwitch PressureSwitch { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -95,9 +95,9 @@ namespace NewSoufanWeatherStation.iOS
                 NameLabel = null;
             }
 
-            if (RainSwitch != null) {
-                RainSwitch.Dispose ();
-                RainSwitch = null;
+            if (PressureSwitch != null) {
+                PressureSwitch.Dispose ();
+                PressureSwitch = null;
             }
 
             if (SerialNumberLabel != null) {

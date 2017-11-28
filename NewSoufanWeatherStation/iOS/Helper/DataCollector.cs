@@ -41,34 +41,18 @@ namespace NewSoufanWeatherStation.iOS.Helper
                 if (history.History.Observations.Length > 0)
                 {
                     var emparature = float.Parse(history.History.Observations[0].Tempi, CultureInfo.InvariantCulture.NumberFormat);
-                    var rainAm = float.Parse(history.History.Observations[0].Dewptm, CultureInfo.InvariantCulture.NumberFormat);
+                    var pressure = float.Parse(history.History.Observations[0].Dewptm, CultureInfo.InvariantCulture.NumberFormat);
                     var windSp = float.Parse(history.History.Observations[0].Wspdi, CultureInfo.InvariantCulture.NumberFormat);
                     var humD = float.Parse(history.History.Observations[0].Hum, CultureInfo.InvariantCulture.NumberFormat);
                     var dateTod = new DateTime(date.Year, date.Month, date.Day);
 
-                    dataList = new Model.WeatherData(emparature, rainAm, windSp, humD, dateTod);
-                    //dataList = new Model.WeatherData(float.Parse(history.History.Observations[0].Tempi, CultureInfo.InvariantCulture.NumberFormat), float.Parse(history.History.Observations[0].Precipi, CultureInfo.InvariantCulture.NumberFormat),
-                                                     //float.Parse(history.History.Observations[0].Wspdi, CultureInfo.InvariantCulture.NumberFormat), float.Parse(history.History.Observations[0].Hum, CultureInfo.InvariantCulture.NumberFormat),
-                                                     //new DateTime(date.Year, date.Month, date.Day));
-                    //{
-                        //Temparature = float.Parse(history.History.Observations[0].Tempi, CultureInfo.InvariantCulture.NumberFormat),
-                        //RainAmount = float.Parse(history.History.Observations[0].Precipi, CultureInfo.InvariantCulture.NumberFormat),
-                        //WindSpeed = float.Parse(history.History.Observations[0].Wspdi, CultureInfo.InvariantCulture.NumberFormat),
-                        //Humidity = float.Parse(history.History.Observations[0].Hum, CultureInfo.InvariantCulture.NumberFormat),
-                        //Date = new DateTime(date.Year, date.Month, date.Day)
-                    //};
+                    dataList = new Model.WeatherData(emparature, pressure, windSp, humD, dateTod);
+
                 }
                 else
                 {
                     dataList = new Model.WeatherData(0.0f, 0.0f, 0.0f, 0.0f, new DateTime(date.Year, date.Month, date.Day));
-                    //{
-                    //    Temparature = 0.0f,
-                    //    RainAmount = 0.0f,
-                    //    WindSpeed = 0.0f,
-                    //    Humidity = 0.0f,
-                    //    Date = new DateTime(date.Year, date.Month, date.Day)
-                                    
-                    //};
+
 
                 }
                  

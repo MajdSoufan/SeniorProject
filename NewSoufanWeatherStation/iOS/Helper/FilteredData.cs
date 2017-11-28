@@ -3,6 +3,6 @@ namespace NewSoufanWeatherStation.iOS.Helper
 {
     public enum FilteredData
     {
-        Temp, Rain, Wind, Humidity
+        Temp, Pressure, Wind, Humidity
     }
 }

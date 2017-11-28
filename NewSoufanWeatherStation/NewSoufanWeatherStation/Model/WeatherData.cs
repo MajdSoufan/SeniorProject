@@ -11,7 +11,7 @@ namespace NewSoufanWeatherStation.Model
         public float Temparature { get; set; }
         public float WindSpeed { get; set; }
         public float Humidity { get; set; }
-        public float RainAmount { get; set; }
+        public float Pressure { get; set; }
 
         public DateTime Date { get; set; }
 
@@ -19,11 +19,11 @@ namespace NewSoufanWeatherStation.Model
         {
         }
 
-        public WeatherData(float temp, float rain, float wind, float hum, DateTime date)
+        public WeatherData(float temp, float pressure, float wind, float hum, DateTime date)
         {
             Temparature = temp;
             WindSpeed = wind;
-            RainAmount = rain;
+            Pressure = pressure;
             Humidity = hum;
             Date = date;
         }
