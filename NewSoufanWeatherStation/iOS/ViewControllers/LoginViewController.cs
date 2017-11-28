@@ -5,11 +5,14 @@ using SQLite;
 using UIKit;
 using System.Threading.Tasks;
 using System.Runtime;
+using NewSoufanWeatherStation.iOS.Scripts;
 
 namespace NewSoufanWeatherStation.iOS
 {
     public partial class LoginViewController : UIViewController
     {
+        private LoadingOverlay loadPop;
+
 
         public LoginViewController(IntPtr handle) : base(handle)
         {
@@ -49,6 +52,23 @@ namespace NewSoufanWeatherStation.iOS
         private bool CheckAccountLoginInfo()
         {
             return true;
+        }
+
+        private async Task ClickLogin()
+        {
+            var bounds = UIScreen.MainScreen.Bounds;
+
+            loadPop = new LoadingOverlay(bounds); // using field from step 2
+            this.NavigationController.View.Add(loadPop);
+            await WaitFor();
+
+            loadPop.Hide();
+        }
+
+        private static async Task WaitFor()
+        {
+            await Task.Delay(2000);
+
         }
     }
 }

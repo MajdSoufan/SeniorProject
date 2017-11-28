@@ -2,12 +2,15 @@ using Foundation;
 using System;
 using UIKit;
 using TimesSquare.iOS;
+using System.Threading.Tasks;
+using NewSoufanWeatherStation.iOS.Scripts;
 
 namespace NewSoufanWeatherStation.iOS
 {
     public partial class SignUpViewController : UIViewController
     {
         private UIAlertView Alert = new UIAlertView();
+        private LoadingOverlay loadPop;
 
         public SignUpViewController (IntPtr handle) : base (handle)
         {
@@ -28,6 +31,12 @@ namespace NewSoufanWeatherStation.iOS
 
         partial void SubmitButton_TouchUpInside(UIButton sender)
         {
+            Task ts = ClickSubmit();
+        }
+
+        private async Task ClickSubmit()
+        {
+
             ClearAllValidation();
             ValidateEntries(FirstNameField);
             ValidateEntries(LastNameField);
@@ -39,18 +48,27 @@ namespace NewSoufanWeatherStation.iOS
             {
                 if (PasswordConfirmation())
                 {
+                    var bounds = UIScreen.MainScreen.Bounds;
+
+                    loadPop = new LoadingOverlay(bounds); // using field from step 2
+                    this.NavigationController.View.Add(loadPop);
+                    CreateNewUser();
+                    await WaitFor();
+
+                    loadPop.Hide();
                     Alert.Message = "User created successfully!!";
                     Alert.AddButton("Ok");
                     Alert.Show();
-                    CreateNewUser();
 
                     ClearAllValidation();
                 }
                 else
                 {
-                    Alert.Message =  "Failed!! Password don't match" ;
+                    
+                    Alert.Message = "Failed!! Password don't match";
                     Alert.AddButton("Ok");
                     Alert.Show();
+
                 }
 
             }
@@ -143,6 +161,12 @@ namespace NewSoufanWeatherStation.iOS
                 textField.ResignFirstResponder();
                 return true;
             };
+        }
+
+        private static async Task WaitFor()
+        {
+            await Task.Delay(2000);
+
         }
     }
 }

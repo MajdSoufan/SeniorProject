@@ -61,6 +61,9 @@ namespace NewSoufanWeatherStation.iOS
                     await WaitFor();
                     UpdateUIElements("Edit", false, 0, UITextBorderStyle.None, (float)7.0);
                     loadPop.Hide();
+                    UIAlertView alert = new UIAlertView() { Message = "Information Saved!!" };
+                    alert.AddButton("OK");
+                    alert.Show();
                 }
                 else
                 {
