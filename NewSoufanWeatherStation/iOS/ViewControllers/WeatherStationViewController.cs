@@ -70,8 +70,7 @@ namespace NewSoufanWeatherStation.iOS
 
                 DateTime day = ((DateTime)StartDatePicker.Date).ToLocalTime();
 
-                NSDate lastDay = EndDatePicker.Date.AddSeconds(500);
-
+                NSDate lastDay = EndDatePicker.Date;
 
                 for (var date = StartDatePicker.Date; !date.IsEqualToDate(lastDay.LaterDate(date)); date = date.AddSeconds(SECONDS_IN_DAY))
                 {
@@ -83,9 +82,9 @@ namespace NewSoufanWeatherStation.iOS
 
                 this.WeatherStation.WeatherList = dataList;
 
-                Alert.Message = "Data: " + StartDatePicker.Date.AddSeconds(SECONDS_IN_DAY).ToString() + " WW";
-                Alert.AddButton("Ok");
-                Alert.Show();
+                //Alert.Message = "Data: " + StartDatePicker.Date.AddSeconds(SECONDS_IN_DAY).ToString() + " WW";
+                //Alert.AddButton("Ok");
+                //Alert.Show();
                 //Alert.Message = "User created successfully!! " + StartDatePicker.Date.LaterDate(EndDatePicker.Date).ToString();
                 //Alert.AddButton("Ok");
                 //Alert.Show();

@@ -47,7 +47,12 @@ namespace NewSoufanWeatherStation.iOS
             {
                 ChartComponent ChartComponent = new ChartComponent();
                 ChartComponent.Name = weatherData.PrintDate();
-                ChartComponent.value = GetChosenData(weatherData);
+
+                if (GetChosenData(weatherData) == 0.0f)
+                    ChartComponent.value = 0.1f;
+                else
+                    ChartComponent.value = GetChosenData(weatherData);
+                
                 ChartComponent.color = UIColor.FromRGB(135f / 255f, 227f / 255f, 23f / 255f);
                 ChartComponent.lableColor = UIColor.Black;
                 Components.Add(ChartComponent);

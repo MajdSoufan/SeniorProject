@@ -512,11 +512,11 @@
                                             <!--Sun, 26 Nov 2017 11:00:00 GMT-->
                                         </date>
                                     </datePicker>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="69338" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="69338" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" useCurrentDate="NO">
                                         <rect key="frame" x="119" y="288" width="242" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="332704801.65417802">
-                                            <!--2011-07-18 18:00:01 +0000-->
+                                        <date key="date" timeIntervalSinceReferenceDate="533436209.277733">
+                                            <!--Mon, 27 Nov 2017 00:43:29 GMT-->
                                         </date>
                                         <date key="minimumDate" timeIntervalSinceReferenceDate="533127600">
                                             <!--Thu, 23 Nov 2017 11:00:00 GMT-->
