@@ -1,12 +1,16 @@
 using Foundation;
 using System;
 using UIKit;
+using NewSoufanWeatherStation.iOS.Scripts;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace NewSoufanWeatherStation.iOS
 {
     public partial class AddStationViewController : UIViewController
     {
         private UIAlertView Alert = new UIAlertView();
+        private LoadingOverlay loadPop;
 
         public AddStationViewController (IntPtr handle) : base (handle)
         {
@@ -20,9 +24,20 @@ namespace NewSoufanWeatherStation.iOS
         }
 
 
-        partial void SubmitButton_TouchUpInside(UIButton sender)
+        partial void SubmitButton_TouchUpInsideAsync(UIButton sender)
         {
-            if((NameTextField.Text.Equals(""))&&(MacAddTextField.Text.Equals(""))&&(SerialNumTextField.Text.Equals("")))
+            Task ts = ClickSubmit();
+
+        }
+
+        private async Task ClickSubmit()
+        {
+            var bounds = UIScreen.MainScreen.Bounds;
+
+            loadPop = new LoadingOverlay(bounds); // using field from step 2
+            this.NavigationController.View.Add(loadPop);
+            await WaitFor();
+            if ((NameTextField.Text.Equals("Backyard Station")) && (MacAddTextField.Text.Equals("011232342423")) && (SerialNumTextField.Text.Equals("110.22.13.11")))
             {
                 Alert.Message = "Station is already added!!";
                 Alert.AddButton("Ok");
@@ -34,6 +49,17 @@ namespace NewSoufanWeatherStation.iOS
                 Alert.AddButton("Ok");
                 Alert.Show();
             }
+            loadPop.Hide();
+        }
+
+        //private static void Waiting()
+        //{
+        //    Task ts = WaitFor();
+        //}
+
+        private static async Task WaitFor()
+        {
+            await Task.Delay(2000);
 
         }
 

@@ -8,6 +8,7 @@ using Foundation;
 using System;
 using System.CodeDom.Compiler;
 using UIKit;
+using System.Threading.Tasks;
 
 namespace NewSoufanWeatherStation.iOS
 {
@@ -32,7 +33,7 @@ namespace NewSoufanWeatherStation.iOS
 
         [Action ("SubmitButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void SubmitButton_TouchUpInside (UIKit.UIButton sender);
+        partial void SubmitButton_TouchUpInsideAsync (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {

@@ -714,7 +714,7 @@
         </scene>
         <scene sceneID="65057">
             <objects>
-                <viewController id="65058" sceneMemberID="viewController" customClass="AddStationViewController" title="Add Station">
+                <viewController id="65058" sceneMemberID="viewController" customClass="AddStationViewController" title="Add Station" storyboardIdentifier="AddStationViewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="65055"/>
                         <viewControllerLayoutGuide type="bottom" id="65056"/>

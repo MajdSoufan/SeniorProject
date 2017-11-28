@@ -103,7 +103,7 @@ namespace NewSoufanWeatherStation.iOS
                     {
                         // show the loading overlay on the UI thread using the correct orientation sizing
                         loadPop = new LoadingOverlay(bounds); // using field from step 2
-                        View.Add(loadPop);
+                        this.NavigationController.View.Add(loadPop);
                     }
 
                     var data = await Helper.DataCollector.GetData(date);

@@ -27,6 +27,19 @@ namespace NewSoufanWeatherStation.iOS
 
             this.TabBarController.NavigationItem.SetRightBarButtonItem(AddButton
                 , true);
+
+            AddButton.Clicked += (sender, e) => 
+            {
+                AddStationViewController addStationViewController = this.Storyboard.InstantiateViewController
+                                                                        ("AddStationViewController") as AddStationViewController;
+                if (addStationViewController != null)
+                {
+                    //dataForm1TabController.WeatherStation = this.WeatherStation;
+
+                    this.NavigationController.PushViewController(addStationViewController, true);
+
+                }
+            };
     
             StationsTable.Source = new StationsTableViewSource(this, StationsList);
 
@@ -39,6 +52,19 @@ namespace NewSoufanWeatherStation.iOS
 
             this.TabBarController.NavigationItem.SetRightBarButtonItem(AddButton
                 , true);
+            
+            //AddButton.Clicked += (sender, e) =>
+            //{
+            //    AddStationViewController addStationViewController = this.Storyboard.InstantiateViewController
+            //                                                            ("AddStationViewController") as AddStationViewController;
+            //    if (addStationViewController != null)
+            //    {
+            //        //dataForm1TabController.WeatherStation = this.WeatherStation;
+
+            //        this.NavigationController.PushViewController(addStationViewController, true);
+
+            //    }
+            //};
 
             this.TabBarController.NavigationItem.Title = "Stations";
         }
