@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using BarChart;
 using System.Threading.Tasks;
+using NewSoufanWeatherStation.iOS.Scripts;
 
 namespace NewSoufanWeatherStation.iOS
 {
@@ -12,6 +13,8 @@ namespace NewSoufanWeatherStation.iOS
     {
         public Model.WeatherStation WeatherStation;
         private List<UISwitch> SwitchesList;
+        private LoadingOverlay loadPop;
+
 
         private const double SECONDS_IN_DAY = 86399;
 
@@ -71,13 +74,25 @@ namespace NewSoufanWeatherStation.iOS
                 DateTime day = ((DateTime)StartDatePicker.Date).ToLocalTime();
 
                 NSDate lastDay = EndDatePicker.Date;
+                var bounds = UIScreen.MainScreen.Bounds;
+
+
+
 
                 for (var date = StartDatePicker.Date; !date.IsEqualToDate(lastDay.LaterDate(date)); date = date.AddSeconds(SECONDS_IN_DAY))
                 {
+                    if (date.IsEqualToDate(StartDatePicker.Date))
+                    {
+                        // show the loading overlay on the UI thread using the correct orientation sizing
+                        loadPop = new LoadingOverlay(bounds); // using field from step 2
+                        View.Add(loadPop);
+                    }
+                    
                     var data = await Helper.DataCollector.GetData(((DateTime)date).ToLocalTime());
                     dataList.Add(data);
                 }
                 //Model.WeatherData weatherData = await Helper.DataCollector.GetData();
+                loadPop.Hide();
 
 
                 this.WeatherStation.WeatherList = dataList;

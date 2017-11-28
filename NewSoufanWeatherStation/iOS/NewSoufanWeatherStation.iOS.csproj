@@ -235,6 +235,7 @@
       <DependentUpon>DataTabController.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\DataCollector.cs" />
+    <Compile Include="Scripts\LoadingOverlay.cs" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="timessquare">
