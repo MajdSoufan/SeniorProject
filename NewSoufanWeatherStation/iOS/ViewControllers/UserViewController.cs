@@ -1,12 +1,15 @@
 using Foundation;
 using System;
 using UIKit;
+using System.Threading.Tasks;
+using NewSoufanWeatherStation.iOS.Scripts;
 
 namespace NewSoufanWeatherStation.iOS
 {
     public partial class UserViewController : UIViewController
     {
         private string FirstNameText, LastNameText, EmailText, PasswordText, PasswordConfText;
+        private LoadingOverlay loadPop;
 
         public UserViewController (IntPtr handle) : base (handle)
         {
@@ -32,6 +35,11 @@ namespace NewSoufanWeatherStation.iOS
 
         partial void EditButton_TouchUpInside(UIButton sender)
         {
+            Task ts = ClickEdit();
+        }
+
+        private async Task ClickEdit()
+        {
             if (EditButton.TitleLabel.Text.Equals("Edit"))
             {
                 UpdateUIElements("Save", true, 1, UITextBorderStyle.RoundedRect, (float)-7.0);
@@ -46,7 +54,13 @@ namespace NewSoufanWeatherStation.iOS
             {
                 if (CheckPasswordConfirmation())
                 {
+                    var bounds = UIScreen.MainScreen.Bounds;
+
+                    loadPop = new LoadingOverlay(bounds); // using field from step 2
+                    this.NavigationController.View.Add(loadPop);
+                    await WaitFor();
                     UpdateUIElements("Edit", false, 0, UITextBorderStyle.None, (float)7.0);
+                    loadPop.Hide();
                 }
                 else
                 {
@@ -139,6 +153,12 @@ namespace NewSoufanWeatherStation.iOS
                 textField.ResignFirstResponder();
                 return true;
             };
+        }
+
+        private static async Task WaitFor()
+        {
+            await Task.Delay(2000);
+
         }
       
     }
