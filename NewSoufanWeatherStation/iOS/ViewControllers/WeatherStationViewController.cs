@@ -65,6 +65,7 @@ namespace NewSoufanWeatherStation.iOS
         {
 
             var Alert = new UIAlertView();
+   
             if ((StartDatePicker.Date.IsEqualToDate(EndDatePicker.Date)) ||
                 (StartDatePicker.Date.IsEqualToDate(StartDatePicker.Date.EarlierDate(EndDatePicker.Date))))
             {
@@ -209,6 +210,14 @@ namespace NewSoufanWeatherStation.iOS
             {
                 return Helper.FilteredData.Humidity;
             }
+        }
+
+        private bool AreDatesEqual()
+        {
+            return
+                (StartDatePicker.Date.ToString().ElementAt(5).Equals(EndDatePicker.Date.ToString().ElementAt(5))) &&
+                (StartDatePicker.Date.ToString().ElementAt(6).Equals(EndDatePicker.Date.ToString().ElementAt(6)));
+
         }
 
     }

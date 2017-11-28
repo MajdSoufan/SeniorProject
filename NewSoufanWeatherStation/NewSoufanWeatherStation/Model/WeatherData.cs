@@ -30,7 +30,8 @@ namespace NewSoufanWeatherStation.Model
 
         public string PrintDate()
         {
-            string year = Date.Year.ToString().Substring(2);
+            //string year = Date.Year.ToString().Substring(2);
+            string year = "17";
             return Date.Month.ToString() + "/" + Date.Day.ToString() + "/" + year;
         }
 
