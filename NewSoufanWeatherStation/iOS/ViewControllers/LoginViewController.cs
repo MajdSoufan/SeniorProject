@@ -46,7 +46,7 @@ namespace NewSoufanWeatherStation.iOS
 
         partial void  ClickLoginButton(UIButton sender)
         {
-
+           // Task ts = ClickLogin();
         }
 
         private bool CheckAccountLoginInfo()
