@@ -37,7 +37,7 @@ namespace NewSoufanWeatherStation.iOS
             loadPop = new LoadingOverlay(bounds); // using field from step 2
             this.NavigationController.View.Add(loadPop);
             await WaitFor();
-            if ((NameTextField.Text.Equals("Backyard Station")) && (MacAddTextField.Text.Equals("011232342423")) && (SerialNumTextField.Text.Equals("110.22.13.11")))
+            if ((NameTextField.Text.Equals("Backyard Station")) && (MacAddTextField.Text.Equals("535f69e40d3e9601")) && (SerialNumTextField.Text.Equals("KINEVANS70")))
             {
                 Alert.Message = "Station is already added!!";
                 Alert.AddButton("Ok");
