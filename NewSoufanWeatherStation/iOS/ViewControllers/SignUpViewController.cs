@@ -55,6 +55,8 @@ namespace NewSoufanWeatherStation.iOS
                     CreateNewUser();
                     await WaitFor();
 
+
+
                     loadPop.Hide();
                     Alert.Message = "User created successfully!!";
                     Alert.AddButton("Ok");
@@ -83,7 +85,8 @@ namespace NewSoufanWeatherStation.iOS
 
         private void CreateNewUser()
         {
-            
+            LoginViewController.UsersList.Add(new Model.User() { FirstName = FirstNameField.Text, LastName = LastNameField.Text, Email = EmailField.Text, Password = PasswordField.Text});
+
         }
 
         private void ValidateEntries(UITextField textField)

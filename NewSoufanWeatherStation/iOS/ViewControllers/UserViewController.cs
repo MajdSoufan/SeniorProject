@@ -23,7 +23,7 @@ namespace NewSoufanWeatherStation.iOS
             this.TabBarController.NavigationItem.Title = "User View";
             this.TabBarController.NavigationItem.SetRightBarButtonItem(null, true);
             TextFieldsReturn();
-           // base.ViewDidAppear();
+
 		}
 
         public override void ViewDidAppear(bool animate)

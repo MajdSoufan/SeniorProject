@@ -1,17 +1,20 @@
 using Foundation;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using SQLite;
 using UIKit;
 using System.Threading.Tasks;
 using System.Runtime;
 using NewSoufanWeatherStation.iOS.Scripts;
+using System.Linq;
 
 namespace NewSoufanWeatherStation.iOS
 {
     public partial class LoginViewController : UIViewController
     {
         private LoadingOverlay loadPop;
+        public static List<Model.User> UsersList;
 
 
         public LoginViewController(IntPtr handle) : base(handle)
@@ -35,6 +38,9 @@ namespace NewSoufanWeatherStation.iOS
                 return true;
             };
 
+            UsersList = new List<Model.User>();
+            UsersList.Add(new Model.User() {FirstName = "Majd", LastName = "Soufan",Email="ms585@evansville.edu", Password="Google12345"});
+
 
         }
 
@@ -46,7 +52,7 @@ namespace NewSoufanWeatherStation.iOS
 
         partial void  ClickLoginButton(UIButton sender)
         {
-           // Task ts = ClickLogin();
+            Task ts = ClickLogin();
         }
 
         private bool CheckAccountLoginInfo()
@@ -61,8 +67,30 @@ namespace NewSoufanWeatherStation.iOS
             loadPop = new LoadingOverlay(bounds); // using field from step 2
             this.NavigationController.View.Add(loadPop);
             await WaitFor();
+            var Alert = new UIAlertView();
+
+            if(CredentialsExistInDataBase())
+            {
+                
+            }
+            else
+            {
+                Alert.Message = "Login info do not exist in database!! ";
+                Alert.AddButton("Ok");
+                Alert.Show();
+
+            }
 
             loadPop.Hide();
+        }
+
+        private bool CredentialsExistInDataBase()
+        {
+            List<string> nameList = UsersList.Select((obj) => obj.FirstName).ToList();
+            List<string> passwordList = UsersList.Select((obj) => obj.Password).ToList();
+
+            return ((nameList.Contains(UserNameTextField.Text)) && (passwordList.Contains(PasswordTextField.Text)));
+
         }
 
         private static async Task WaitFor()
