@@ -11,6 +11,8 @@ namespace NewSoufanWeatherStation.iOS
         private string FirstNameText, LastNameText, EmailText, PasswordText, PasswordConfText;
         private LoadingOverlay loadPop;
 
+        public static Model.User TheUser;
+
         public UserViewController (IntPtr handle) : base (handle)
         {
         }
@@ -23,8 +25,17 @@ namespace NewSoufanWeatherStation.iOS
             this.TabBarController.NavigationItem.Title = "User View";
             this.TabBarController.NavigationItem.SetRightBarButtonItem(null, true);
             TextFieldsReturn();
-
+            LoadDataFromSegue();
 		}
+
+        private void LoadDataFromSegue()
+        {
+            FirstNameTextField.Text = TheUser.FirstName;
+            LastNameTextField.Text = TheUser.LastName;
+            EmailTextField.Text = TheUser.Email;
+            PasswordTextField.Text = TheUser.Password;
+            PasswordConfTextField.Text = TheUser.Password;
+        }
 
         public override void ViewDidAppear(bool animate)
         {

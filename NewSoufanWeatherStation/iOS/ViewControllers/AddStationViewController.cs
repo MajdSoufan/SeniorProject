@@ -24,7 +24,7 @@ namespace NewSoufanWeatherStation.iOS
         }
 
 
-        partial void SubmitButton_TouchUpInsideAsync(UIButton sender)
+        partial void SubmitButton_TouchUpInside(UIButton sender)
         {
             Task ts = ClickSubmit();
 

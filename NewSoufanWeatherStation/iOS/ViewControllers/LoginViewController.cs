@@ -50,6 +50,7 @@ namespace NewSoufanWeatherStation.iOS
 
         }
 
+
         partial void  ClickLoginButton(UIButton sender)
         {
             Task ts = ClickLogin();
@@ -71,7 +72,19 @@ namespace NewSoufanWeatherStation.iOS
 
             if(CredentialsExistInDataBase())
             {
-                
+                UserTabViewController userTabViewController = this.Storyboard.InstantiateViewController
+                                                                ("UserTabViewController") as UserTabViewController;
+                if (userTabViewController != null)
+                {
+                    //dataForm1TabController.WeatherStation = this.WeatherStation;
+                    //DataForm1Controller.WeatherStation = this.WeatherStation;
+                    //userViewController.
+                    UserViewController.TheUser = UsersList.Find((item) => item.FirstName.Equals(UserNameTextField.Text));
+
+                    this.NavigationController.PushViewController(userTabViewController, true);
+
+                }
+
             }
             else
             {

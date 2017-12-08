@@ -14,5 +14,8 @@ namespace NewSoufanWeatherStation.iOS
     [Register ("DataTabController")]
     partial class DataTabController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

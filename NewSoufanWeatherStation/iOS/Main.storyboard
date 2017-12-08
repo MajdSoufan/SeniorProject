@@ -64,7 +64,6 @@
                                 </state>
                                 <connections>
                                     <action selector="ClickLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="11883"/>
-                                    <segue id="61800" destination="28332" kind="push"/>
                                 </connections>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
@@ -502,27 +501,27 @@
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="68593" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" useCurrentDate="NO">
                                         <rect key="frame" x="119" y="236" width="242" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="533127600.452392">
-                                            <!--Thu, 23 Nov 2017 11:00:00 GMT-->
+                                        <date key="date" timeIntervalSinceReferenceDate="534164400.452392">
+                                            <!--Tue, 05 Dec 2017 11:00:00 GMT-->
                                         </date>
-                                        <date key="minimumDate" timeIntervalSinceReferenceDate="533127600">
-                                            <!--Thu, 23 Nov 2017 11:00:00 GMT-->
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="534164400">
+                                            <!--Tue, 05 Dec 2017 11:00:00 GMT-->
                                         </date>
-                                        <date key="maximumDate" timeIntervalSinceReferenceDate="533991600">
-                                            <!--Sun, 03 Dec 2017 11:00:00 GMT-->
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="534337200">
+                                            <!--Thu, 07 Dec 2017 11:00:00 GMT-->
                                         </date>
                                     </datePicker>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="69338" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" useCurrentDate="NO">
                                         <rect key="frame" x="119" y="288" width="242" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="533991600.277733">
-                                            <!--Sun, 03 Dec 2017 11:00:00 GMT-->
+                                        <date key="date" timeIntervalSinceReferenceDate="534337200.277733">
+                                            <!--Thu, 07 Dec 2017 11:00:00 GMT-->
                                         </date>
-                                        <date key="minimumDate" timeIntervalSinceReferenceDate="533127600">
-                                            <!--Thu, 23 Nov 2017 11:00:00 GMT-->
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="534164400">
+                                            <!--Tue, 05 Dec 2017 11:00:00 GMT-->
                                         </date>
-                                        <date key="maximumDate" timeIntervalSinceReferenceDate="533991600">
-                                            <!--Sun, 03 Dec 2017 11:00:00 GMT-->
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="534337200">
+                                            <!--Thu, 07 Dec 2017 11:00:00 GMT-->
                                         </date>
                                     </datePicker>
                                 </subviews>
@@ -552,7 +551,7 @@
         <!--User View-->
         <scene sceneID="28331">
             <objects>
-                <tabBarController id="28332" customClass="UserTabViewController" sceneMemberID="viewController" title="User View">
+                <tabBarController id="28332" customClass="UserTabViewController" sceneMemberID="viewController" title="User View" storyboardIdentifier="UserTabViewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="28335">
                         <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -796,8 +795,10 @@
         <image name="weather-background.jpg" width="2560" height="1600"/>
         <image name="sea-background.jpg" width="1080" height="1920"/>
         <image name="blue.png" width="512" height="512"/>
+        <image name="AppIcon.png" width="215" height="223"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedScreenMetrics key="destination" type="retina47"/>
+        <simulatedScreenMetrics key="destination" type="retina5_5.fullscreen"/>
+        <simulatedOrientationMetrics key="orientation"/>
     </simulatedMetricsContainer>
 </document>

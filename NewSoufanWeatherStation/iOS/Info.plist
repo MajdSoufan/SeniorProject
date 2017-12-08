@@ -5,7 +5,7 @@
 	<key>CFBundleName</key>
 	<string>SoufanWeatherStation</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.SoufanConsulting.SoufanWeatherStation</string>
+	<string>SoufanConsulting.SoufanWeatherStation</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -40,9 +40,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImage.launchimage</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
 </dict>
 </plist>
